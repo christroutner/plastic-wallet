@@ -5,7 +5,7 @@
 "use strict"
 
 const htmlTemplate = function(config) {
-  const { pubAddr, pubQR } = config
+  const { wifQR, wif } = config
 
   return `
   <body style="padding: 0; margin: 0;">
@@ -14,7 +14,7 @@ const htmlTemplate = function(config) {
       <table>
         <tr>
           <td style="">
-            <img src='${pubQR}' />
+            <img src='${wifQR}' />
           </td>
 
           <td style="width: 100px;">
@@ -22,11 +22,12 @@ const htmlTemplate = function(config) {
 
           <td style="">
             <p style="font-family: Monaco, monospace; font-size: 72; margin: 0px; margin-bottom: 5px;">
-              <u>Public Addr</u><br />
-              ${pubAddr.slice(0, 12)}<br />
-              ${pubAddr.slice(12, 24)}<br />
-              ${pubAddr.slice(24, 36)}<br />
-              ${pubAddr.slice(36, 42)}<br /><br />
+              <u>Private Key</u><br />
+              ${wif.slice(0, 12)}<br />
+              ${wif.slice(12, 24)}<br />
+              ${wif.slice(24, 36)}<br />
+              ${wif.slice(36, 48)}<br />
+              ${wif.slice(48, 52)}<br />
               SN# 001
 
             </p>

@@ -32,7 +32,8 @@
     "show-mother": "node src/show-mother-qr.js",
     "fund-addresses": "node src/fund-addresses.js",
     "check-addresses": "node src/check-addresses.js",
-    "reclaim-funds": "node src/reclaim-funds.js"
+    "reclaim-funds": "node src/reclaim-funds.js",
+    "create": "node src/create.js"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
