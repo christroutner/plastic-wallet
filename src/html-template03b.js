@@ -5,7 +5,7 @@
 "use strict"
 
 const htmlTemplate = function(config) {
-  const { wifQR, wif } = config
+  const { wifQR, wif, i, rnd } = config
 
   return `
   <body style="padding: 0; margin: 0;">
@@ -28,7 +28,7 @@ const htmlTemplate = function(config) {
               ${wif.slice(24, 36)}<br />
               ${wif.slice(36, 48)}<br />
               ${wif.slice(48, 52)}<br />
-              SN# 001
+              SN# ${generateSN(rnd, i)}
 
             </p>
           </td>
@@ -37,6 +37,17 @@ const htmlTemplate = function(config) {
     </div>
   </body>
 `
+}
+
+function generateSN(rnd, i) {
+  let outStr = "000"
+
+  outStr = outStr + i
+  outStr = outStr.slice(-3)
+
+  outStr = rnd + outStr
+
+  return outStr
 }
 
 module.exports = htmlTemplate

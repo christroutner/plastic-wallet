@@ -51,6 +51,10 @@ const main = async () => {
   // BIP44
   const bip44 = BITBOX.HDNode.derivePath(masterHDNode, "m/44'/145'")
 
+  // Generate a random number for the first half of the serial number.
+  const rnd = generateRando()
+  // console.log(`rnd: ${rnd}`)
+
   for (let i = 0; i < addressCount; i++) {
     console.log(`html: ${i}`)
     await sleep(100)
@@ -71,10 +75,10 @@ const main = async () => {
     console.log(`pubAddr: ${pubAddr}`)
 
     // Generate the artwork for the public address.
-    await createPublic(pubAddr, i)
+    await createPublic(pubAddr, i, rnd)
 
     // Generate the artwork for the private key.
-    await createPrivate(wif, i)
+    await createPrivate(wif, i, rnd)
   }
 
   console.log(chalk.green("All done."), emoji.get(":white_check_mark:"))
@@ -82,7 +86,7 @@ const main = async () => {
 }
 main()
 
-async function createPublic(addr, i) {
+async function createPublic(addr, i, rnd) {
   try {
     // create empty html file
     touch(`${htmlDir}/privKeyWIFs/paper-wallet-wif-public-${i}.html`)
@@ -98,7 +102,7 @@ async function createPublic(addr, i) {
     const pubQR = await QRCode.toDataURL(addr, qrOptions)
 
     // Generate an HTML page from the dat.
-    const htmlConfig = { pubAddr: addr, pubQR }
+    const htmlConfig = { pubAddr: addr, pubQR, i, rnd }
     const htmlData = htmlTemplatePublic(htmlConfig)
 
     // save to html file
@@ -112,7 +116,7 @@ async function createPublic(addr, i) {
   }
 }
 
-async function createPrivate(wif, i) {
+async function createPrivate(wif, i, rnd) {
   try {
     // create empty html file
     touch(`${htmlDir}/privKeyWIFs/paper-wallet-wif-private-${i}.html`)
@@ -128,7 +132,7 @@ async function createPrivate(wif, i) {
     const wifQR = await QRCode.toDataURL(wif, qrOptions)
 
     // Generate an HTML page from the dat.
-    const htmlConfig = { wifQR, wif }
+    const htmlConfig = { wifQR, wif, i, rnd }
     const htmlData = htmlTemplatePrivate(htmlConfig)
 
     // save to html file
@@ -140,4 +144,17 @@ async function createPrivate(wif, i) {
     console.error(`Error in createPrivate()`)
     throw err
   }
+}
+
+// Generates a 3-digit random number string.
+function generateRando() {
+  let rnd = Math.random()
+
+  rnd = rnd * 1000
+
+  rnd = Math.floor(rnd)
+
+  const str = `000${rnd}`
+
+  return str.slice(-3)
 }
