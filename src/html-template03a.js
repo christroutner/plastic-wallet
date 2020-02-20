@@ -9,7 +9,7 @@ const htmlTemplate = function(config) {
 
   return `
   <body style="padding: 0; margin: 0;">
-    <div style="border: 0px solid black; width: 1120px; height: 640px; padding: 5px;">
+    <div style="border: 0px solid black; width: 1120px; height: 640px; padding: 5px; margin-left: 50px;">
 
       <table>
         <tr>
