@@ -1,0 +1,16 @@
+# dependencies
+/node_modules
+
+.DS_Store
+npm-debug.log*
+.console_history
+
+*.csv
+*.swp
+
+mnemonic.json
+wallet.json
+wallet-backup.json
+goldenTicketWallet.json
+
+output/

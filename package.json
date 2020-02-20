@@ -1,0 +1,50 @@
+{
+  "name": "golden-ticket",
+  "license": "MIT",
+  "description": "Event paper wallet generator",
+  "author": "Chris Troutner <chris.troutner@gmail.com>",
+  "contributors": [
+    "Gabriel Cardona <gabriel@bitcoin.com>"
+  ],
+  "version": "0.0.1",
+  "dependencies": {
+    "bitbox-sdk": "^5.1.1",
+    "chalk": "^2.4.1",
+    "csvtojson": "^2.0.8",
+    "html-pdf": "^2.2.0",
+    "json-2-csv": "^2.3.1",
+    "mkdirp": "^0.5.1",
+    "node-emoji": "^1.8.1",
+    "node-sass": "^4.9.0",
+    "prompt": "^1.0.0",
+    "qrcode": "^1.2.0",
+    "qrcode-terminal": "^0.12.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "^2.1.8",
+    "sass-loader": "^7.0.1",
+    "touch": "^3.1.0"
+  },
+  "scripts": {
+    "generate-wallet": "node src/generate-wallet.js",
+    "create-addresses": "node src/create-addresses.js",
+    "create-csv": "node src/create-csv.js",
+    "show-mother": "node src/show-mother-qr.js",
+    "fund-addresses": "node src/fund-addresses.js",
+    "check-addresses": "node src/check-addresses.js",
+    "reclaim-funds": "node src/reclaim-funds.js"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.2",
+    "eslint": "^5.5.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "node-mocks-http": "^1.7.0",
+    "nodemon": "^1.8.1",
+    "prettier": "^1.14.2",
+    "supertest": "^4.0.2"
+  }
+}
