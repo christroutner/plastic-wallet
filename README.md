@@ -44,3 +44,6 @@ the settings that worked best for the PVC business cards:
 
 1. Power at 35%
 2. Depth at 37%
+
+Also, the cards are glossy. I sanded them down with 80 grit sandpaper before
+engraving them.
