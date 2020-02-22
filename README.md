@@ -1,61 +1,44 @@
-## Tip BCH
-This a node.js app that generates Bitcoin Cash tips.
+## Plastic Wallet Maker
+This a node.js app that generate 'paper' wallets for Bitcoin Cash. These kinds
+of wallets are often called 'cold storage' wallets too. The artwork generated
+by this software is intended to etched on
+to [PVC plastic cards](https://amzn.to/3bV3cHj) with
+a [laser engraver](https://amzn.to/2V9ejXj).
 
-![Tip Example](images/example300.jpg)
+![Tip Example](images/laser-engraver-screenshot.jpg)
 
-The tips are generated as a series of PDF files, which can be printed out and
-physically handed out. Recievers can scan the QR code with a BCH wallet to claim
-the tip.
-
-Users of this app can run a script to reclaim any unused funds, so that tips
-aren't wasted.
-
-This repository is forked from
-[Bitcoin.com Golden Ticket](https://github.com/Bitcoin-com/golden-ticket)
+The artwork is generated as an HTML page that can be captured as screen-shot
+images. The images can be exported to the laser engraver and etched onto the
+plastic cards.
 
 ## Installation
 
-[Step-by-step Video Instructions on YouTube](https://youtu.be/qFGjQ277h_A)
+- Install [NodeJS](http://nodejs.org/) LTS version 8.x or greater.
 
-Install [NodeJS](http://nodejs.org/) LTS version 8.x or greater.
-
-Clone the repo
-
+- Clone the repo
 `git clone https://github.com/christroutner/tip-bch`
 
-Install the dependencies
-
-`cd tip-bch && npm install`
+- Install the dependencies
+`cd plastic-wallet && npm install`
 
 ## Usage
 
 A typical workflow is
 
-- `npm run generate-wallet` to create the 'mothership' address. This will generate
-a BCH address and QR code on the terminal that you then fund. This will prompt
-you for the number of children wallets to create.
+- `npm run generate-wallet` to create the HD wallet used to generate any number
+of address/key pairs. This command will prompt you for two things:
+1. The language to use, which will default to English. Just hit enter.
+2. The number of addresses to generate.
 
-- `npm run create-addresses` will generate a series of HTML and PDF files for
-each child address.
+- `npm run create` to create the artwork for the laser engraver.
 
-- `npm run create-csv` is a handy way to create a list of the addresses that you
-just funded.
+- Delete the `wallet.json` file in the `output/wallets` directory so that no
+one can steel the funds. You should also delete the artwork files after etching
+them onto plastic.
 
-- `npm run show-mother` show the mothership address and QR code.
+## Engraver Details
+If you use the same laser engraver I used, these are the settings that worked
+best for the PVC business cards:
 
-- `npm run fund-addresses` will fund each child by evenly distributing the BCH
-funded to the mothership address.
-
-- `npm run check-addresses` generate a CSV file listing each tip address and
-weather or not they have been claimed (or not).
-
-- `npm run reclaim-funds` reclaim any unspent tips by sending them to an address
-of your choosing.
-
-## Multiple Sessions
-It may be necessary to create tips for multiple events or sessions at once. After
-you created and funded the tips, create a `.zip` backup of the `output` directory.
-You can then restore the `output` directory and everything you need to make the
-commands work will be in-place. Swapping out different copies of the `output`
-directory will allow you to work with multiple sets of mothership and children
-wallets.
+1. Power at 35%
+2. Depth at 37%

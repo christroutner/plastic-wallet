@@ -1,7 +1,7 @@
 {
-  "name": "golden-ticket",
+  "name": "plastic-wallet",
   "license": "MIT",
-  "description": "Event paper wallet generator",
+  "description": "BCH paper wallet generator for laser engravers",
   "author": "Chris Troutner <chris.troutner@gmail.com>",
   "contributors": [
     "Gabriel Cardona <gabriel@bitcoin.com>"
@@ -27,12 +27,6 @@
   },
   "scripts": {
     "generate-wallet": "node src/generate-wallet.js",
-    "create-addresses": "node src/create-addresses.js",
-    "create-csv": "node src/create-csv.js",
-    "show-mother": "node src/show-mother-qr.js",
-    "fund-addresses": "node src/fund-addresses.js",
-    "check-addresses": "node src/check-addresses.js",
-    "reclaim-funds": "node src/reclaim-funds.js",
     "create": "node src/create.js"
   },
   "devDependencies": {

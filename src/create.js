@@ -11,10 +11,9 @@ const QRCode = require("qrcode")
 const touch = require("touch")
 const mkdirp = require("mkdirp")
 const fs = require("fs")
-const pdf = require("html-pdf")
 const emoji = require("node-emoji")
 const chalk = require("chalk")
-const addresses = []
+
 const htmlTemplatePublic = require("./html-template03a")
 const htmlTemplatePrivate = require("./html-template03b")
 
@@ -26,7 +25,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 const main = async () => {
   let mnemonicObj
   try {
-    mnemonicObj = require(`${__dirname}/../output/wallets/motherShipWallet.json`)
+    mnemonicObj = require(`${__dirname}/../output/wallets/wallet.json`)
   } catch (err) {
     console.log(
       `Could not open mnemonic.json. Generate a mnemonic with generate-wallet first.
@@ -82,14 +81,14 @@ const main = async () => {
   }
 
   console.log(chalk.green("All done."), emoji.get(":white_check_mark:"))
-  console.log(emoji.get(":rocket:"), `html and pdfs written successfully.`)
+  console.log(emoji.get(":rocket:"), `html files written successfully.`)
 }
 main()
 
 async function createPublic(addr, i, rnd) {
   try {
     // create empty html file
-    touch(`${htmlDir}/privKeyWIFs/paper-wallet-wif-public-${i}.html`)
+    touch(`${htmlDir}/paper-wallet-wif-public-${i}.html`)
 
     const qrOptions = {
       // width: 450,
@@ -106,10 +105,7 @@ async function createPublic(addr, i, rnd) {
     const htmlData = htmlTemplatePublic(htmlConfig)
 
     // save to html file
-    fs.writeFileSync(
-      `${htmlDir}/privKeyWIFs/paper-wallet-wif-public-${i}.html`,
-      htmlData
-    )
+    fs.writeFileSync(`${htmlDir}/paper-wallet-wif-public-${i}.html`, htmlData)
   } catch (err) {
     console.error(`Error in createPublic()`)
     throw err
@@ -119,7 +115,7 @@ async function createPublic(addr, i, rnd) {
 async function createPrivate(wif, i, rnd) {
   try {
     // create empty html file
-    touch(`${htmlDir}/privKeyWIFs/paper-wallet-wif-private-${i}.html`)
+    touch(`${htmlDir}/paper-wallet-wif-private-${i}.html`)
 
     const qrOptions = {
       // width: 450,
@@ -136,10 +132,7 @@ async function createPrivate(wif, i, rnd) {
     const htmlData = htmlTemplatePrivate(htmlConfig)
 
     // save to html file
-    fs.writeFileSync(
-      `${htmlDir}/privKeyWIFs/paper-wallet-wif-private-${i}.html`,
-      htmlData
-    )
+    fs.writeFileSync(`${htmlDir}/paper-wallet-wif-private-${i}.html`, htmlData)
   } catch (err) {
     console.error(`Error in createPrivate()`)
     throw err

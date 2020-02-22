@@ -1,7 +1,6 @@
 /*
-  Generates the mothership wallet, which is used to fund all the children QR codes.
-  The 'number of children' is the number of children address to generate as
-  tips/QR codes to scan.
+  Create an HD wallet that will be used to generate the address/key pairs used
+  in the artwork.
 */
 
 "use strict"
@@ -19,7 +18,6 @@ const main = async () => {
   // Create directories if they don't yet exist.
   mkdirp(`${__dirname}/../output`, err => {})
   mkdirp(`${__dirname}/../output/wallets`, err => {})
-  mkdirp(`${__dirname}/../output/csv`, err => {})
 
   // start the prompt to get user input
   prompt.start()
@@ -61,38 +59,24 @@ const main = async () => {
     // master HDNode
     const masterHDNode = BITBOX.HDNode.fromSeed(rootSeed)
 
-    // set the hdpath based on input. Default to BCH BIP44
-    //let hdpath
-    //if (result.hdpath) hdpath = result.hdpath
-    //else hdpath = "m/44'/145'/0'"
-    const hdpath = "m/44'/145'/0'"
-
-    const mothershipHDPath = "m/44'/145'/1'/0/0"
+    // set the hdpath. Default to BCH BIP44
+    const mothershipHDPath = "m/44'/145'/0'/0/0"
 
     // HDNode of first internal change address
-    const mothership = BITBOX.HDNode.derivePath(masterHDNode, mothershipHDPath)
-    console.log(`Your mothership's HDPath is ${mothershipHDPath}`)
-
-    // mothership HDNode to cashAddr
-    const mothershipAddress = BITBOX.HDNode.toCashAddress(mothership)
-
-    // show mothership address qr code
-    console.log(`Fund the mothership at: ${mothershipAddress}\n`)
-    qrcode.generate(mothershipAddress, { small: true })
+    console.log(`Your wallets HDPath is ${mothershipHDPath}`)
 
     // mnemonic, hdpath and mothership address to save in basic wallet
     const mnemonicObj = {
       mnemonic: mnemonic,
       mothership: {
         hdPath: mothershipHDPath,
-        address: mothershipAddress,
         children: children
       }
     }
 
-    // get walletFileName from user. Default to wallet.json
-    const wfn = `motherShipWallet.json`
-    //if (result.walletFileName) wfn = `${result.walletFileName}.json`
+    // wallet file name
+    const wfn = `wallet.json`
+
     const filename = `${__dirname}/../output/wallets/${wfn}`
 
     // Write out the basic wallet into a json file for other scripts  to use.
