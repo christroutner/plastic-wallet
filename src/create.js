@@ -39,7 +39,6 @@ const main = async () => {
 
   // create needed directory structure
   mkdirp(`${htmlDir}`, err => {})
-  mkdirp(`${htmlDir}/privKeyWIFs`, err => {})
 
   // root seed buffer
   const rootSeed = BITBOX.Mnemonic.toSeed(mnemonicObj.mnemonic)
