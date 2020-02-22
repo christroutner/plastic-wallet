@@ -5,7 +5,7 @@ by this software is intended to etched on
 to [PVC plastic cards](https://amzn.to/3bV3cHj) with
 a [laser engraver](https://amzn.to/2V9ejXj).
 
-![Tip Example](images/laser-engraver-screenshot.jpg)
+![artwork example](images/laser-engraver-screenshot.JPG)
 
 The artwork is generated as an HTML page that can be captured as screen-shot
 images. The images can be exported to the laser engraver and etched onto the
