@@ -26,7 +26,8 @@ const htmlTemplate = function(config) {
               ${pubAddr.slice(0, 12)}<br />
               ${pubAddr.slice(12, 24)}<br />
               ${pubAddr.slice(24, 36)}<br />
-              ${pubAddr.slice(36, 42)}<br /><br />
+              ${pubAddr.slice(36, 48)}<br />
+              ${pubAddr.slice(48, 54)}<br />
               SN# ${generateSN(rnd, i)}
 
             </p>
