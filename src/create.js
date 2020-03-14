@@ -5,8 +5,12 @@
 
 "use strict"
 
-const BITBOXSDK = require("bitbox-sdk")
-const BITBOX = new BITBOXSDK()
+// const BITBOXSDK = require("bitbox-sdk")
+// const BITBOX = new BITBOXSDK()
+
+const BCHJS = require("@chris.troutner/bch-js")
+const bchjs = new BCHJS()
+
 const QRCode = require("qrcode")
 const touch = require("touch")
 const mkdirp = require("mkdirp")
@@ -41,13 +45,13 @@ const main = async () => {
   mkdirp(`${htmlDir}`, err => {})
 
   // root seed buffer
-  const rootSeed = BITBOX.Mnemonic.toSeed(mnemonicObj.mnemonic)
+  const rootSeed = await bchjs.Mnemonic.toSeed(mnemonicObj.mnemonic)
 
   // master HDNode
-  const masterHDNode = BITBOX.HDNode.fromSeed(rootSeed)
+  const masterHDNode = bchjs.HDNode.fromSeed(rootSeed)
 
   // BIP44
-  const bip44 = BITBOX.HDNode.derivePath(masterHDNode, "m/44'/145'")
+  const bip44 = bchjs.HDNode.derivePath(masterHDNode, "m/44'/145'")
 
   // Generate a random number for the first half of the serial number.
   const rnd = generateRando()
@@ -57,18 +61,18 @@ const main = async () => {
     console.log(`html: ${i}`)
     await sleep(100)
     // derive the ith external change address from the BIP44 account HDNode
-    const node = BITBOX.HDNode.derivePath(
+    const node = bchjs.HDNode.derivePath(
       bip44,
       //`${result.hdAccount ? result.hdAccount : 0}'/0/${i}`
       `0'/0/${i}`
     )
 
     // get the priv key in wallet import format
-    const wif = BITBOX.HDNode.toWIF(node)
+    const wif = bchjs.HDNode.toWIF(node)
     console.log(`WIF for address ${i}: ${wif}`)
 
     // Get the public key for the WIF.
-    const pubAddr = BITBOX.HDNode.toCashAddress(node)
+    const pubAddr = bchjs.HDNode.toCashAddress(node)
     // pubAddr = BITBOX.Address.toCashAddress(pubAddr, false)
     console.log(`pubAddr: ${pubAddr}`)
 
