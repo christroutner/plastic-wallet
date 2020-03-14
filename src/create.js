@@ -73,11 +73,13 @@ const main = async () => {
 
     // Get the public key for the WIF.
     const pubAddr = bchjs.HDNode.toCashAddress(node)
+    const slpAddr = bchjs.SLP.Address.toSLPAddress(pubAddr)
     // pubAddr = BITBOX.Address.toCashAddress(pubAddr, false)
-    console.log(`pubAddr: ${pubAddr}`)
+    // console.log(`pubAddr: ${pubAddr}`)
+    console.log(`slpAddr: ${slpAddr}`)
 
     // Generate the artwork for the public address.
-    await createPublic(pubAddr, i, rnd)
+    await createPublic(slpAddr, i, rnd)
 
     // Generate the artwork for the private key.
     await createPrivate(wif, i, rnd)
