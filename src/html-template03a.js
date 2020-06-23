@@ -9,31 +9,14 @@ const htmlTemplate = function(config) {
 
   return `
   <body style="padding: 0; margin: 0;">
-    <div style="border: 0px solid black; width: 1120px; height: 640px; padding: 5px; margin-left: 50px;">
-
-      <table>
-        <tr>
-          <td style="">
-            <img src='${pubQR}' />
-          </td>
-
-          <td style="width: 100px;">
-          </td>
-
-          <td style="">
-            <p style="font-family: Monaco, monospace; font-size: 72; margin: 0px; margin-bottom: 5px;">
-              <u>Public Addr</u><br />
-              ${pubAddr.slice(0, 12)}<br />
-              ${pubAddr.slice(12, 24)}<br />
-              ${pubAddr.slice(24, 36)}<br />
-              ${pubAddr.slice(36, 48)}<br />
-              ${pubAddr.slice(48, 55)}<br />
-              SN# ${generateSN(rnd, i)}
-
-            </p>
-          </td>
-        </tr>
-      </table>
+    <div style="border: 1px solid black; width: 800px; height: 800px; padding: 5px; margin-left: 50px;">
+      <center>
+        <img src='${pubQR}' style="padding: 50px;" />
+        <br /><br />
+        <p style="font-family: Monaco, monospace; font-size: 24; margin: 0px; margin-bottom: 5px;">
+          ${pubAddr}
+        </p>
+      </center>
     </div>
   </body>
 `
