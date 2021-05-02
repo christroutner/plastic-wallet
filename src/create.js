@@ -73,7 +73,7 @@ const main = async () => {
 
     // Get the public key for the WIF.
     const pubAddr = bchjs.HDNode.toCashAddress(node)
-    // pubAddr = BITBOX.Address.toCashAddress(pubAddr, false)
+    // const pubAddr = bchjs.HDNode.toLegacyAddress(node)
     console.log(`pubAddr: ${pubAddr}`)
 
     // Generate the artwork for the public address.
