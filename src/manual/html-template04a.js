@@ -21,13 +21,13 @@ const htmlTemplate = function(config) {
           </td>
 
           <td style="">
-            <p style="font-family: Monaco, monospace; font-size: 46; margin: 0px; margin-bottom: 5px;">
+            <p style="font-family: Monaco, monospace; font-size: 52; margin: 0px; margin-bottom: 5px;">
               <u>Public Addr</u><br />
-              ${pubAddr.slice(0, 18)}<br />
-              ${pubAddr.slice(18, 36)}<br />
-              ${pubAddr.slice(36, 54)}<br />
-              ${pubAddr.slice(54, 72)}<br />
-              ${pubAddr.slice(72, 90)}<br />
+              ${pubAddr.slice(0, 15)}<br />
+              ${pubAddr.slice(15, 30)}<br />
+              ${pubAddr.slice(30, 45)}<br />
+              ${pubAddr.slice(45, 60)}<br />
+              ${pubAddr.slice(60, 75)}<br />
               SN# ${generateSN(rnd, i)}
 
             </p>

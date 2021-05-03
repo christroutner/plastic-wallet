@@ -23,11 +23,11 @@ const htmlTemplate = function(config) {
           <td style="">
             <p style="font-family: Monaco, monospace; font-size: 46; margin: 0px; margin-bottom: 5px;">
               <u>Private Key</u><br />
-              ${wif.slice(0, 18)}<br />
-              ${wif.slice(18, 36)}<br />
-              ${wif.slice(36, 54)}<br />
-              ${wif.slice(54, 72)}<br />
-              ${wif.slice(72, 90)}<br />
+              ${wif.slice(0, 15)}<br />
+              ${wif.slice(15, 30)}<br />
+              ${wif.slice(30, 45)}<br />
+              ${wif.slice(45, 60)}<br />
+              ${wif.slice(60, 75)}<br />
               SN# ${generateSN(rnd, i)}
 
             </p>
