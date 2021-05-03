@@ -4,8 +4,8 @@
 
 "use strict"
 
-const PUBLIC_ADDR = "public"
-const PRIVATE_ADDR = "private"
+const PUBLIC_ADDR = "public-key"
+const PRIVATE_ADDR = "private-key"
 
 // const BCHJS = require("@chris.troutner/bch-js")
 // const bchjs = new BCHJS()
@@ -17,10 +17,10 @@ const fs = require("fs")
 const emoji = require("node-emoji")
 const chalk = require("chalk")
 
-const htmlTemplatePublic = require("./html-template03a")
-const htmlTemplatePrivate = require("./html-template03b")
+const htmlTemplatePublic = require("./html-template04a")
+const htmlTemplatePrivate = require("./html-template04b")
 
-const htmlDir = `${__dirname}/../output/html`
+const htmlDir = `${__dirname}/../../output/html`
 
 // const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -31,7 +31,7 @@ const main = async () => {
 
   // Generate a random number for the first half of the serial number.
   const rnd = generateRando()
-  const i = 0
+  const i = "ETH"
 
   // Generate the artwork for the public address.
   await createPublic(PUBLIC_ADDR, i, rnd)
