@@ -21,7 +21,7 @@ const htmlTemplate = function(config) {
           </td>
 
           <td style="">
-            <p style="font-family: Monaco, monospace; font-size: 46; margin: 0px; margin-bottom: 5px;">
+            <p style="font-family: Monaco, monospace; font-size: 52; margin: 0px; margin-bottom: 5px;">
               <u>Private Key</u><br />
               ${wif.slice(0, 15)}<br />
               ${wif.slice(15, 30)}<br />
