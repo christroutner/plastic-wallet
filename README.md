@@ -17,7 +17,7 @@ plastic cards.
 
 ## Installation
 
-- Install [NodeJS](http://nodejs.org/) LTS version 8.x or greater.
+- Install [NodeJS](http://nodejs.org/) LTS version 14.x or greater.
 
 - Clone this repository:
 
@@ -43,4 +43,4 @@ If you use [the same laser engraver I used](https://amzn.to/2V9ejXj), these are 
 2. Depth at 45%
 
 Also, the cards are glossy. I sanded them down with 80 grit sandpaper before
-engraving them.
+engraving them. This preparation step is critical. They will not engrave properly unless you remove the gloss.
