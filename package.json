@@ -9,7 +9,8 @@
   "version": "0.0.1",
   "scripts": {
     "start": "node src/help.js",
-    "bch": "node src/create-bch-wallets.js"
+    "bch": "node src/create-bch-wallets.js",
+    "slp": "node src/create-slp-wallets.js"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
