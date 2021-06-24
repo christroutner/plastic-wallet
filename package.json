@@ -10,7 +10,8 @@
   "scripts": {
     "start": "node src/help.js",
     "bch": "node src/create-bch-wallets.js",
-    "slp": "node src/create-slp-wallets.js"
+    "slp": "node src/create-slp-wallets.js",
+    "btc": "node src/create-btc-wallets.js"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
