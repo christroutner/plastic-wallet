@@ -13,25 +13,16 @@ const htmlTemplate = function(config) {
 
       <table>
         <tr>
-          <td style="">
-            <img src='${pubQR}' />
+          <td>
+            <center>
+            <h1 style="font-size: 48px;">
+              Peter Maag
+              <br />
+              541-731-6224
+            </h1>
+            </center>
           </td>
 
-          <td style="width: 100px;">
-          </td>
-
-          <td style="">
-            <p style="font-family: Monaco, monospace; font-size: 54; margin: 0px; margin-bottom: 5px;">
-              <u>Public Addr</u><br />
-              ${pubAddr.slice(0, 13)}<br />
-              ${pubAddr.slice(13, 26)}<br />
-              ${pubAddr.slice(26, 39)}<br />
-              ${pubAddr.slice(39, 52)}<br />
-              ${pubAddr.slice(52, 65)}<br />
-              SN# ${generateSN(rnd, i)}
-
-            </p>
-          </td>
         </tr>
       </table>
     </div>
