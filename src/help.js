@@ -13,6 +13,9 @@ npm run btc: Make BTC paper wallets.
 
 Each command assumes that you've opened it and customized the variables at the
 top of the file.
+
+Also check out the /manual directory for creating a custom artwork. This can be
+used to generate custom wallets, like for ETH or AVAX.
 `)
 }
 help()
