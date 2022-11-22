@@ -32,6 +32,8 @@ plastic cards.
 - `npm start` - display the latest help menu.
 - `npm run bch` - generate BCH paper wallets.
 - `npm run slp` - generate SLP token paper wallets.
+- `npm run xec` - generate eCash (XEC) paper wallets.
+- `npm run btc` - generate Bitcoin (BTC) paper wallets.
 
 The above scripts for generating the paper wallets have variables at the very top, that you can customize. But they should also 'just work'.
 
