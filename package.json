@@ -11,7 +11,8 @@
     "start": "node src/help.js",
     "bch": "node src/create-bch-wallets.js",
     "slp": "node src/create-slp-wallets.js",
-    "btc": "node src/create-btc-wallets.js"
+    "btc": "node src/create-btc-wallets.js",
+    "xec": "node src/create-xec-wallets.js"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
@@ -25,7 +26,7 @@
     "standard": "^11.0.1"
   },
   "dependencies": {
-    "@psf/bch-js": "^4.18.1",
+    "@psf/bch-js": "6.5.3",
     "mkdirp": "^0.5.5",
     "qrcode": "^1.4.4",
     "touch": "^3.1.0"
