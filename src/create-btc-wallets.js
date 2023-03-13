@@ -21,8 +21,8 @@ const BCHJS = require('@psf/bch-js')
 const bchjs = new BCHJS()
 
 const htmlDir = `${__dirname.toString()}/../output/html`
-const htmlTemplatePublic = require('./html-template03a')
-const htmlTemplatePrivate = require('./html-template03b')
+const htmlTemplatePublic = require('./templates/html-template03a')
+const htmlTemplatePrivate = require('./templates/html-template03b')
 
 async function start () {
   try {

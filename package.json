@@ -13,6 +13,7 @@
     "slp": "node src/create-slp-wallets.js",
     "btc": "node src/create-btc-wallets.js",
     "xec": "node src/create-xec-wallets.js",
+    "eth": "node src/create-eth-wallets.js",
     "lint": "standard --env mocha --fix"
   },
   "devDependencies": {
@@ -20,6 +21,7 @@
   },
   "dependencies": {
     "@psf/bch-js": "6.6.1",
+    "ethers": "6.1.0",
     "mkdirp": "0.5.5",
     "qrcode": "1.4.4",
     "touch": "3.1.0"
