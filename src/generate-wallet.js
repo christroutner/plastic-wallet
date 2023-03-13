@@ -3,21 +3,21 @@
   in the artwork.
 */
 
-"use strict"
+'use strict'
 
-const BITBOXSDK = require("bitbox-sdk")
+const BITBOXSDK = require('bitbox-sdk')
 const BITBOX = new BITBOXSDK()
-const fs = require("fs")
-const qrcode = require("qrcode-terminal")
-const emoji = require("node-emoji")
-const chalk = require("chalk")
-const prompt = require("prompt")
-const mkdirp = require("mkdirp")
+const fs = require('fs')
+// const qrcode = require('qrcode-terminal')
+const emoji = require('node-emoji')
+const chalk = require('chalk')
+const prompt = require('prompt')
+const mkdirp = require('mkdirp')
 
 const main = async () => {
   // Create directories if they don't yet exist.
-  mkdirp(`${__dirname}/../output`, err => {})
-  mkdirp(`${__dirname}/../output/wallets`, err => {})
+  mkdirp(`${__dirname}/../output`, err => { console.error('Error creating dir: ', err) })
+  mkdirp(`${__dirname}/../output/wallets`, err => { console.error('Error creating dir: ', err) })
 
   // start the prompt to get user input
   prompt.start()
@@ -29,15 +29,17 @@ const main = async () => {
   )
 
   // ask for language, hdpath and walletFileName
-  prompt.get(["language", "children"], (err, result) => {
+  prompt.get(['language', 'children'], (err, result) => {
+    if (err) { console.error('Error: ', err) }
+
     // Validate the children input.
     let children
     try {
       children = parseInt(result.children)
-      //console.log(`children: ${children}`)
+      // console.log(`children: ${children}`)
 
-      if (isNaN(children)) throw new Error("bad data")
-      if (children < 1) throw new Error("bad data")
+      if (isNaN(children)) throw new Error('bad data')
+      if (children < 1) throw new Error('bad data')
     } catch (err) {
       console.log(`number of children needs to be a positive integer.`)
       return
@@ -46,18 +48,16 @@ const main = async () => {
     // generate mnemonic based on language input. Default to english
     const mnemonic = BITBOX.Mnemonic.generate(
       128,
-      BITBOX.Mnemonic.wordLists()[
-        result.language ? result.language.toLowerCase() : "english"
-      ]
+      BITBOX.Mnemonic.wordLists()[result.language ? result.language.toLowerCase() : 'english']
     )
     // show the user their mnemoninc
     console.log(`Your mnemonic is: ${chalk.red(mnemonic)}`)
 
     // root seed buffer
-    const rootSeed = BITBOX.Mnemonic.toSeed(mnemonic)
+    // const rootSeed = BITBOX.Mnemonic.toSeed(mnemonic)
 
     // master HDNode
-    const masterHDNode = BITBOX.HDNode.fromSeed(rootSeed)
+    // const masterHDNode = BITBOX.HDNode.fromSeed(rootSeed)
 
     // set the hdpath. Default to BCH BIP44
     const mothershipHDPath = "m/44'/145'/0'/0/0"
@@ -83,8 +83,8 @@ const main = async () => {
     fs.writeFile(filename, JSON.stringify(mnemonicObj, null, 2), err => {
       if (err) return console.error(err)
 
-      console.log(chalk.green("All done."), emoji.get(":white_check_mark:"))
-      console.log(emoji.get(":rocket:"), `${wfn} written successfully.`)
+      console.log(chalk.green('All done.'), emoji.get(':white_check_mark:'))
+      console.log(emoji.get(':rocket:'), `${wfn} written successfully.`)
     })
   })
 }

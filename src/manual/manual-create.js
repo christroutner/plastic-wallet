@@ -2,23 +2,23 @@
   Generates the artwork for a manually input public and private key.
 */
 
-"use strict"
+'use strict'
 
-const PUBLIC_ADDR = "public-key"
-const PRIVATE_ADDR = "private-key"
+const PUBLIC_ADDR = 'public-key'
+const PRIVATE_ADDR = 'private-key'
 
 // const BCHJS = require("@chris.troutner/bch-js")
 // const bchjs = new BCHJS()
 
-const QRCode = require("qrcode")
-const touch = require("touch")
-const mkdirp = require("mkdirp")
-const fs = require("fs")
-const emoji = require("node-emoji")
-const chalk = require("chalk")
+const QRCode = require('qrcode')
+const touch = require('touch')
+const mkdirp = require('mkdirp')
+const fs = require('fs')
+const emoji = require('node-emoji')
+const chalk = require('chalk')
 
-const htmlTemplatePublic = require("./html-template04a")
-const htmlTemplatePrivate = require("./html-template04b")
+const htmlTemplatePublic = require('./html-template04a')
+const htmlTemplatePrivate = require('./html-template04b')
 
 const htmlDir = `${__dirname}/../../output/html`
 
@@ -27,11 +27,11 @@ const htmlDir = `${__dirname}/../../output/html`
 // Open the wallet generated with generate-wallet.
 const main = async () => {
   // create needed directory structure
-  mkdirp(`${htmlDir}`, err => {})
+  mkdirp(`${htmlDir}`, err => { console.error('Error: ', err) })
 
   // Generate a random number for the first half of the serial number.
   const rnd = generateRando()
-  const i = "ETH"
+  const i = 'ETH'
 
   // Generate the artwork for the public address.
   await createPublic(PUBLIC_ADDR, i, rnd)
@@ -39,12 +39,12 @@ const main = async () => {
   // Generate the artwork for the private key.
   await createPrivate(PRIVATE_ADDR, i, rnd)
 
-  console.log(chalk.green("All done."), emoji.get(":white_check_mark:"))
-  console.log(emoji.get(":rocket:"), `html files written successfully.`)
+  console.log(chalk.green('All done.'), emoji.get(':white_check_mark:'))
+  console.log(emoji.get(':rocket:'), `html files written successfully.`)
 }
 main()
 
-async function createPublic(addr, i, rnd) {
+async function createPublic (addr, i, rnd) {
   try {
     // create empty html file
     touch(`${htmlDir}/paper-wallet-wif-public-${i}.html`)
@@ -71,7 +71,7 @@ async function createPublic(addr, i, rnd) {
   }
 }
 
-async function createPrivate(wif, i, rnd) {
+async function createPrivate (wif, i, rnd) {
   try {
     // create empty html file
     touch(`${htmlDir}/paper-wallet-wif-private-${i}.html`)
@@ -99,7 +99,7 @@ async function createPrivate(wif, i, rnd) {
 }
 
 // Generates a 3-digit random number string.
-function generateRando() {
+function generateRando () {
   let rnd = Math.random()
 
   rnd = rnd * 1000

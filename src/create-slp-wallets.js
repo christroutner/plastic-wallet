@@ -12,22 +12,22 @@ const NUM_WALLETS = 5
 
 // <---- END
 
-const QRCode = require("qrcode")
-const touch = require("touch")
-const mkdirp = require("mkdirp")
-const fs = require("fs")
+const QRCode = require('qrcode')
+const touch = require('touch')
+const mkdirp = require('mkdirp')
+const fs = require('fs')
 
-const BCHJS = require("@psf/bch-js")
+const BCHJS = require('@psf/bch-js')
 const bchjs = new BCHJS()
 
 const htmlDir = `${__dirname.toString()}/../output/html`
-const htmlTemplatePublic = require("./html-template03a")
-const htmlTemplatePrivate = require("./html-template03b")
+const htmlTemplatePublic = require('./html-template03a')
+const htmlTemplatePrivate = require('./html-template03b')
 
-async function start() {
+async function start () {
   try {
     // create needed directory structure
-    mkdirp(`${htmlDir}`, err => {})
+    mkdirp(`${htmlDir}`, err => { console.error('Error creating dir: ', err) })
 
     const mnemonic = bchjs.Mnemonic.generate(
       128,
@@ -78,13 +78,13 @@ async function start() {
       await createPrivate(wif, i, rnd)
     }
   } catch (err) {
-    console.log("Error: ", err)
+    console.log('Error: ', err)
   }
 }
 start()
 
 // Generates a 3-digit random number string.
-function generateRando() {
+function generateRando () {
   let rnd = Math.random()
 
   rnd = rnd * 1000
@@ -96,7 +96,7 @@ function generateRando() {
   return str.slice(-3)
 }
 
-async function createPublic(addr, i, rnd) {
+async function createPublic (addr, i, rnd) {
   try {
     // create empty html file
     touch(`${htmlDir}/paper-wallet-wif-public-${i}.html`)
@@ -123,7 +123,7 @@ async function createPublic(addr, i, rnd) {
   }
 }
 
-async function createPrivate(wif, i, rnd) {
+async function createPrivate (wif, i, rnd) {
   try {
     // create empty html file
     touch(`${htmlDir}/paper-wallet-wif-private-${i}.html`)

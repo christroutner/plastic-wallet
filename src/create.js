@@ -3,23 +3,23 @@
   the mothership wallet.
 */
 
-"use strict"
+'use strict'
 
 // const BITBOXSDK = require("bitbox-sdk")
 // const BITBOX = new BITBOXSDK()
 
-const BCHJS = require("@chris.troutner/bch-js")
+const BCHJS = require('@chris.troutner/bch-js')
 const bchjs = new BCHJS()
 
-const QRCode = require("qrcode")
-const touch = require("touch")
-const mkdirp = require("mkdirp")
-const fs = require("fs")
-const emoji = require("node-emoji")
-const chalk = require("chalk")
+const QRCode = require('qrcode')
+const touch = require('touch')
+const mkdirp = require('mkdirp')
+const fs = require('fs')
+const emoji = require('node-emoji')
+const chalk = require('chalk')
 
-const htmlTemplatePublic = require("./html-template03a")
-const htmlTemplatePrivate = require("./html-template03b")
+const htmlTemplatePublic = require('./html-template03a')
+const htmlTemplatePrivate = require('./html-template03b')
 
 const htmlDir = `${__dirname}/../output/html`
 
@@ -42,7 +42,7 @@ const main = async () => {
   // const addressCount = 1
 
   // create needed directory structure
-  mkdirp(`${htmlDir}`, err => {})
+  mkdirp(`${htmlDir}`, err => { console.error('Error creating dir: ', err) })
 
   // root seed buffer
   const rootSeed = await bchjs.Mnemonic.toSeed(mnemonicObj.mnemonic)
@@ -63,7 +63,7 @@ const main = async () => {
     // derive the ith external change address from the BIP44 account HDNode
     const node = bchjs.HDNode.derivePath(
       bip44,
-      //`${result.hdAccount ? result.hdAccount : 0}'/0/${i}`
+      // `${result.hdAccount ? result.hdAccount : 0}'/0/${i}`
       `0'/0/${i}`
     )
 
@@ -83,12 +83,12 @@ const main = async () => {
     await createPrivate(wif, i, rnd)
   }
 
-  console.log(chalk.green("All done."), emoji.get(":white_check_mark:"))
-  console.log(emoji.get(":rocket:"), `html files written successfully.`)
+  console.log(chalk.green('All done.'), emoji.get(':white_check_mark:'))
+  console.log(emoji.get(':rocket:'), `html files written successfully.`)
 }
 main()
 
-async function createPublic(addr, i, rnd) {
+async function createPublic (addr, i, rnd) {
   try {
     // create empty html file
     touch(`${htmlDir}/paper-wallet-wif-public-${i}.html`)
@@ -115,7 +115,7 @@ async function createPublic(addr, i, rnd) {
   }
 }
 
-async function createPrivate(wif, i, rnd) {
+async function createPrivate (wif, i, rnd) {
   try {
     // create empty html file
     touch(`${htmlDir}/paper-wallet-wif-private-${i}.html`)
@@ -143,7 +143,7 @@ async function createPrivate(wif, i, rnd) {
 }
 
 // Generates a 3-digit random number string.
-function generateRando() {
+function generateRando () {
   let rnd = Math.random()
 
   rnd = rnd * 1000

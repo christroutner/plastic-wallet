@@ -2,9 +2,9 @@
   This file encodes the html template for the golden ticket.
 */
 
-"use strict"
+'use strict'
 
-const htmlTemplate = function(config) {
+const htmlTemplate = function (config) {
   const { wifQR, wif, i, rnd } = config
 
   return `
@@ -39,8 +39,8 @@ const htmlTemplate = function(config) {
 `
 }
 
-function generateSN(rnd, i) {
-  let outStr = "000"
+function generateSN (rnd, i) {
+  let outStr = '000'
 
   outStr = outStr + i
   outStr = outStr.slice(-3)

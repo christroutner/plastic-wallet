@@ -1,5 +1,5 @@
 /*
-  This script creates BCH paper wallets.
+  This script creates ETH paper wallets.
 
   Use the constants to customize the script for your use.
 */
@@ -8,7 +8,7 @@
 // START ----->
 
 // The number of paper wallets to generate.
-const NUM_WALLETS = 10
+const NUM_WALLETS = 5
 
 // <---- END
 
@@ -40,23 +40,17 @@ async function start () {
     // master HDNode
     const masterHDNode = bchjs.HDNode.fromSeed(rootSeed)
 
-    // HD wallet BIP44 standard derivation path of 899 used for BCH.
-    console.log("BIP44 Account: \"m/44'/899'/0'\"")
+    // HD wallet BIP44 standard derivation path of 145 used for BCH.
+    console.log("BIP44 Account: \"m/44'/145'/0'\"")
 
     const wallets = []
 
     // Generate the first 10 seed addresses.
     for (let i = 0; i < NUM_WALLETS; i++) {
-      const childNode = masterHDNode.derivePath(`m/44'/899'/0'/0/${i}`)
+      const childNode = masterHDNode.derivePath(`m/44'/145'/0'/0/${i}`)
 
       const outObj = {}
-
-      // Generate bitcoincash address.
       outObj.cashAddress = bchjs.HDNode.toCashAddress(childNode)
-
-      // Convert bitcoincash address to ecash address
-      outObj.cashAddress = bchjs.Address.toEcashAddress(outObj.cashAddress)
-
       outObj.WIF = bchjs.HDNode.toWIF(childNode)
 
       wallets.push(outObj)

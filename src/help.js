@@ -2,7 +2,7 @@
   Shows the help for new users.
 */
 
-function help() {
+function help () {
   console.log(`
 This is a program for making paper wallets. Available commands:
 
