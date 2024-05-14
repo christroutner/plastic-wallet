@@ -4,8 +4,12 @@
 
 'use strict'
 
-const htmlTemplate = function (config) {
-  const { wifQR, wif, i, rnd } = config
+const htmlTemplate = function (config = {}) {
+  const { privDatas } = config
+
+  if(privDatas.length !== 9) {
+    throw new Error('privDatas must be an array with 9 elements.')
+  }
 
   return `
   <!DOCTYPE html>
@@ -29,11 +33,10 @@ const htmlTemplate = function (config) {
             <td>
 
               <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
-
                 <table>
                   <tr>
                     <td style="">
-                      <img src='${wifQR}' style="padding-left: 25px; padding-top: 25px;" />
+                      <img src='${privDatas[0].privQR}' style="padding-left: 25px; padding-top: 25px;" />
                     </td>
 
                     <td style="width: 100px;">
@@ -42,12 +45,12 @@ const htmlTemplate = function (config) {
                     <td style="">
                       <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
                         <u>Private Key</u><br />
-                        ${wif.slice(0, 12)}<br />
-                        ${wif.slice(12, 24)}<br />
-                        ${wif.slice(24, 36)}<br />
-                        ${wif.slice(36, 48)}<br />
-                        ${wif.slice(48, 52)}<br />
-                        SN# ${generateSN(rnd, i)}
+                        ${privDatas[0].wif.slice(0, 12)}<br />
+                        ${privDatas[0].wif.slice(12, 24)}<br />
+                        ${privDatas[0].wif.slice(24, 36)}<br />
+                        ${privDatas[0].wif.slice(36, 48)}<br />
+                        ${privDatas[0].wif.slice(48, 52)}<br />
+                        SN# ${generateSN(privDatas[0].rnd, 0)}
 
                       </p>
                     </td>
@@ -62,32 +65,280 @@ const htmlTemplate = function (config) {
 
             </td>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${privDatas[1].privQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Private Key</u><br />
+                        ${privDatas[1].wif.slice(0, 12)}<br />
+                        ${privDatas[1].wif.slice(12, 24)}<br />
+                        ${privDatas[1].wif.slice(24, 36)}<br />
+                        ${privDatas[1].wif.slice(36, 48)}<br />
+                        ${privDatas[1].wif.slice(48, 52)}<br />
+                        SN# ${generateSN(privDatas[1].rnd, 1)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Keep this PRIVATE. No pictures.
+                  </b>
+                </center></p>
+              </div>
+
             </td>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${privDatas[2].privQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Private Key</u><br />
+                        ${privDatas[2].wif.slice(0, 12)}<br />
+                        ${privDatas[2].wif.slice(12, 24)}<br />
+                        ${privDatas[2].wif.slice(24, 36)}<br />
+                        ${privDatas[2].wif.slice(36, 48)}<br />
+                        ${privDatas[2].wif.slice(48, 52)}<br />
+                        SN# ${generateSN(privDatas[2].rnd, 2)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Keep this PRIVATE. No pictures.
+                  </b>
+                </center></p>
+              </div>
+
             </td>
           </tr>
           <tr>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${privDatas[3].privQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Private Key</u><br />
+                        ${privDatas[3].wif.slice(0, 12)}<br />
+                        ${privDatas[3].wif.slice(12, 24)}<br />
+                        ${privDatas[3].wif.slice(24, 36)}<br />
+                        ${privDatas[3].wif.slice(36, 48)}<br />
+                        ${privDatas[3].wif.slice(48, 52)}<br />
+                        SN# ${generateSN(privDatas[3].rnd, 3)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Keep this PRIVATE. No pictures.
+                  </b>
+                </center></p>
+              </div>
+
             </td>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${privDatas[4].privQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Private Key</u><br />
+                        ${privDatas[4].wif.slice(0, 12)}<br />
+                        ${privDatas[4].wif.slice(12, 24)}<br />
+                        ${privDatas[4].wif.slice(24, 36)}<br />
+                        ${privDatas[4].wif.slice(36, 48)}<br />
+                        ${privDatas[4].wif.slice(48, 52)}<br />
+                        SN# ${generateSN(privDatas[4].rnd, 4)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Keep this PRIVATE. No pictures.
+                  </b>
+                </center></p>
+              </div>
+
             </td>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${privDatas[5].privQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Private Key</u><br />
+                        ${privDatas[5].wif.slice(0, 12)}<br />
+                        ${privDatas[5].wif.slice(12, 24)}<br />
+                        ${privDatas[5].wif.slice(24, 36)}<br />
+                        ${privDatas[5].wif.slice(36, 48)}<br />
+                        ${privDatas[5].wif.slice(48, 52)}<br />
+                        SN# ${generateSN(privDatas[5].rnd, 5)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Keep this PRIVATE. No pictures.
+                  </b>
+                </center></p>
+              </div>
+
             </td>
           </tr>
           <tr>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${privDatas[6].privQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Private Key</u><br />
+                        ${privDatas[6].wif.slice(0, 12)}<br />
+                        ${privDatas[6].wif.slice(12, 24)}<br />
+                        ${privDatas[6].wif.slice(24, 36)}<br />
+                        ${privDatas[6].wif.slice(36, 48)}<br />
+                        ${privDatas[6].wif.slice(48, 52)}<br />
+                        SN# ${generateSN(privDatas[6].rnd, 6)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Keep this PRIVATE. No pictures.
+                  </b>
+                </center></p>
+              </div>
+
             </td>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${privDatas[7].privQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Private Key</u><br />
+                        ${privDatas[7].wif.slice(0, 12)}<br />
+                        ${privDatas[7].wif.slice(12, 24)}<br />
+                        ${privDatas[7].wif.slice(24, 36)}<br />
+                        ${privDatas[7].wif.slice(36, 48)}<br />
+                        ${privDatas[7].wif.slice(48, 52)}<br />
+                        SN# ${generateSN(privDatas[7].rnd, 7)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Keep this PRIVATE. No pictures.
+                  </b>
+                </center></p>
+              </div>
+
             </td>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${privDatas[8].privQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Private Key</u><br />
+                        ${privDatas[8].wif.slice(0, 12)}<br />
+                        ${privDatas[8].wif.slice(12, 24)}<br />
+                        ${privDatas[8].wif.slice(24, 36)}<br />
+                        ${privDatas[8].wif.slice(36, 48)}<br />
+                        ${privDatas[8].wif.slice(48, 52)}<br />
+                        SN# ${generateSN(privDatas[8].rnd, 8)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Keep this PRIVATE. No pictures.
+                  </b>
+                </center></p>
+              </div>
+
             </td>
           </tr>
         </table>

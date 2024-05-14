@@ -8,7 +8,7 @@
 // START ----->
 
 // The number of paper wallets to generate.
-const NUM_WALLETS = 1
+const NUM_WALLETS = 9
 
 // <---- END
 
@@ -60,6 +60,9 @@ async function start () {
     // Generate a random number for the first half of the serial number.
     const rnd = generateRando()
 
+    const pubDatas = []
+    const privDatas = []
+
     for (let i = 0; i < NUM_WALLETS; i++) {
       console.log(`\npaper wallet: ${i}`)
 
@@ -71,12 +74,18 @@ async function start () {
       const pubAddr = wallets[i].cashAddress
       console.log(`pubAddr: ${pubAddr}`)
 
-      // Generate the artwork for the public address.
-      await createPublic(pubAddr, i, rnd)
+      const pubData = {pubAddr,rnd}
+      pubDatas.push(pubData)
 
-      // Generate the artwork for the private key.
-      await createPrivate(wif, i, rnd)
+      const privData = {wif, rnd}
+      privDatas.push(privData)
     }
+
+    // Generate the artwork for the public address.
+    await createPublic(pubDatas)
+
+    // Generate the artwork for the private key.
+    await createPrivate(privDatas)
   } catch (err) {
     console.log('Error: ', err)
   }
@@ -96,54 +105,67 @@ function generateRando () {
   return str.slice(-3)
 }
 
-async function createPublic (addr, i, rnd) {
+async function createPublic (pubDatas = []) {
   try {
     // create empty html file
-    touch(`${htmlDir}/paper-wallet-wif-public-${i}.html`)
+    touch(`${htmlDir}/paper-wallet-wif-public.html`)
 
-    const qrOptions = {
-      // width: 450,
-      width: 225,
-      margin: 0
+    for(let i=0; i<pubDatas.length; i++) {
+      const pubData = pubDatas[i]
+
+      // Create the QR code artwork.
+      const qrOptions = {
+        // width: 450,
+        width: 225,
+        margin: 0
+      }
+      const pubQR = await QRCode.toDataURL(pubData.pubAddr, qrOptions)
+
+      pubData.pubQR = pubQR
+
+      pubDatas[i] = pubData
     }
 
-    // const wifQR = await QRCode.toDataURL(wif, qrOptions)
-
-    const pubQR = await QRCode.toDataURL(addr, qrOptions)
-
     // Generate an HTML page from the dat.
-    const htmlConfig = { pubAddr: addr, pubQR, i, rnd }
+    const htmlConfig = { pubDatas }
     const htmlData = htmlTemplatePublic(htmlConfig)
 
     // save to html file
-    fs.writeFileSync(`${htmlDir}/paper-wallet-wif-public-${i}.html`, htmlData)
+    fs.writeFileSync(`${htmlDir}/paper-wallet-wif-public.html`, htmlData)
   } catch (err) {
     console.error(`Error in createPublic()`)
     throw err
   }
 }
 
-async function createPrivate (wif, i, rnd) {
+async function createPrivate (privDatas = []) {
   try {
     // create empty html file
-    touch(`${htmlDir}/paper-wallet-wif-private-${i}.html`)
+    touch(`${htmlDir}/paper-wallet-wif-private.html`)
 
-    const qrOptions = {
-      // width: 450,
-      width: 225,
-      margin: 0
+    for(let i=0; i<privDatas.length; i++) {
+      const privData = privDatas[i]
+
+      // Create the QR code artwork.
+      const qrOptions = {
+        // width: 450,
+        width: 225,
+        margin: 0
+      }
+      const privQR = await QRCode.toDataURL(privData.wif, qrOptions)
+
+      privData.privQR = privQR
+
+      privDatas[i] = privData
     }
 
-    // const wifQR = await QRCode.toDataURL(wif, qrOptions)
-
-    const wifQR = await QRCode.toDataURL(wif, qrOptions)
-
     // Generate an HTML page from the dat.
-    const htmlConfig = { wifQR, wif, i, rnd }
+    // const htmlConfig = { wifQR, wif, i, rnd }
+    const htmlConfig = { privDatas }
     const htmlData = htmlTemplatePrivate(htmlConfig)
 
     // save to html file
-    fs.writeFileSync(`${htmlDir}/paper-wallet-wif-private-${i}.html`, htmlData)
+    fs.writeFileSync(`${htmlDir}/paper-wallet-wif-private.html`, htmlData)
   } catch (err) {
     console.error(`Error in createPrivate()`)
     throw err

@@ -4,8 +4,12 @@
 
 'use strict'
 
-const htmlTemplate = function (config) {
-  const { pubAddr, pubQR, i, rnd } = config
+const htmlTemplate = function (config = {}) {
+  const { pubDatas } = config
+
+  if(pubDatas.length !== 9) {
+    throw new Error('pubDatas must be an array with 9 elements.')
+  }
 
   return `
   <!DOCTYPE html>
@@ -32,7 +36,7 @@ const htmlTemplate = function (config) {
                 <table>
                   <tr>
                     <td style="">
-                      <img src='${pubQR}' style="padding-left: 25px; padding-top: 25px;" />
+                      <img src='${pubDatas[0].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
                     </td>
 
                     <td style="width: 100px;">
@@ -41,12 +45,12 @@ const htmlTemplate = function (config) {
                     <td style="">
                       <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
                         <u>Public Addr</u><br />
-                        ${pubAddr.slice(0, 12)}<br />
-                        ${pubAddr.slice(12, 24)}<br />
-                        ${pubAddr.slice(24, 36)}<br />
-                        ${pubAddr.slice(36, 48)}<br />
-                        ${pubAddr.slice(48, 55)}<br />
-                        SN# ${generateSN(rnd, i)}
+                        ${pubDatas[0].pubAddr.slice(0, 12)}<br />
+                        ${pubDatas[0].pubAddr.slice(12, 24)}<br />
+                        ${pubDatas[0].pubAddr.slice(24, 36)}<br />
+                        ${pubDatas[0].pubAddr.slice(36, 48)}<br />
+                        ${pubDatas[0].pubAddr.slice(48, 55)}<br />
+                        SN# ${generateSN(pubDatas[0].rnd, 0)}
 
                       </p>
                     </td>
@@ -61,32 +65,280 @@ const htmlTemplate = function (config) {
 
             </td>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${pubDatas[1].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Public Addr</u><br />
+                        ${pubDatas[1].pubAddr.slice(0, 12)}<br />
+                        ${pubDatas[1].pubAddr.slice(12, 24)}<br />
+                        ${pubDatas[1].pubAddr.slice(24, 36)}<br />
+                        ${pubDatas[1].pubAddr.slice(36, 48)}<br />
+                        ${pubDatas[1].pubAddr.slice(48, 55)}<br />
+                        SN# ${generateSN(pubDatas[1].rnd, 1)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Share this to recieve payment
+                  </b>
+                </center></p>
+              </div>
+
             </td>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${pubDatas[2].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Public Addr</u><br />
+                        ${pubDatas[2].pubAddr.slice(0, 12)}<br />
+                        ${pubDatas[2].pubAddr.slice(12, 24)}<br />
+                        ${pubDatas[2].pubAddr.slice(24, 36)}<br />
+                        ${pubDatas[2].pubAddr.slice(36, 48)}<br />
+                        ${pubDatas[2].pubAddr.slice(48, 55)}<br />
+                        SN# ${generateSN(pubDatas[2].rnd, 0)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Share this to recieve payment
+                  </b>
+                </center></p>
+              </div>
+
             </td>
           </tr>
           <tr>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${pubDatas[3].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Public Addr</u><br />
+                        ${pubDatas[3].pubAddr.slice(0, 12)}<br />
+                        ${pubDatas[3].pubAddr.slice(12, 24)}<br />
+                        ${pubDatas[3].pubAddr.slice(24, 36)}<br />
+                        ${pubDatas[3].pubAddr.slice(36, 48)}<br />
+                        ${pubDatas[3].pubAddr.slice(48, 55)}<br />
+                        SN# ${generateSN(pubDatas[3].rnd, 3)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Share this to recieve payment
+                  </b>
+                </center></p>
+              </div>
+
             </td>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${pubDatas[4].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Public Addr</u><br />
+                        ${pubDatas[4].pubAddr.slice(0, 12)}<br />
+                        ${pubDatas[4].pubAddr.slice(12, 24)}<br />
+                        ${pubDatas[4].pubAddr.slice(24, 36)}<br />
+                        ${pubDatas[4].pubAddr.slice(36, 48)}<br />
+                        ${pubDatas[4].pubAddr.slice(48, 55)}<br />
+                        SN# ${generateSN(pubDatas[4].rnd, 4)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Share this to recieve payment
+                  </b>
+                </center></p>
+              </div>
+
             </td>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${pubDatas[5].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Public Addr</u><br />
+                        ${pubDatas[5].pubAddr.slice(0, 12)}<br />
+                        ${pubDatas[5].pubAddr.slice(12, 24)}<br />
+                        ${pubDatas[5].pubAddr.slice(24, 36)}<br />
+                        ${pubDatas[5].pubAddr.slice(36, 48)}<br />
+                        ${pubDatas[5].pubAddr.slice(48, 55)}<br />
+                        SN# ${generateSN(pubDatas[5].rnd, 5)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Share this to recieve payment
+                  </b>
+                </center></p>
+              </div>
+
             </td>
           </tr>
           <tr>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${pubDatas[6].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Public Addr</u><br />
+                        ${pubDatas[6].pubAddr.slice(0, 12)}<br />
+                        ${pubDatas[6].pubAddr.slice(12, 24)}<br />
+                        ${pubDatas[6].pubAddr.slice(24, 36)}<br />
+                        ${pubDatas[6].pubAddr.slice(36, 48)}<br />
+                        ${pubDatas[6].pubAddr.slice(48, 55)}<br />
+                        SN# ${generateSN(pubDatas[6].rnd, 6)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Share this to recieve payment
+                  </b>
+                </center></p>
+              </div>
+
             </td>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${pubDatas[7].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Public Addr</u><br />
+                        ${pubDatas[7].pubAddr.slice(0, 12)}<br />
+                        ${pubDatas[7].pubAddr.slice(12, 24)}<br />
+                        ${pubDatas[7].pubAddr.slice(24, 36)}<br />
+                        ${pubDatas[7].pubAddr.slice(36, 48)}<br />
+                        ${pubDatas[7].pubAddr.slice(48, 55)}<br />
+                        SN# ${generateSN(pubDatas[7].rnd, 7)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Share this to recieve payment
+                  </b>
+                </center></p>
+              </div>
+
             </td>
             <td>
-              <div style="width: 533px; height: 335px; border: 1px solid black; background: #000; margin: 25px;"></div>
+
+              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${pubDatas[8].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Public Addr</u><br />
+                        ${pubDatas[8].pubAddr.slice(0, 12)}<br />
+                        ${pubDatas[8].pubAddr.slice(12, 24)}<br />
+                        ${pubDatas[8].pubAddr.slice(24, 36)}<br />
+                        ${pubDatas[8].pubAddr.slice(36, 48)}<br />
+                        ${pubDatas[8].pubAddr.slice(48, 55)}<br />
+                        SN# ${generateSN(pubDatas[8].rnd, 8)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                    Share this to recieve payment
+                  </b>
+                </center></p>
+              </div>
+
             </td>
           </tr>
         </table>
