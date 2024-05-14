@@ -10,6 +10,7 @@
   "scripts": {
     "start": "node src/help.js",
     "bch": "node src/create-bch-wallets.js",
+    "bch:bulk": "node src/create-bch-bulk-wallets.js",
     "slp": "node src/create-slp-wallets.js",
     "btc": "node src/create-btc-wallets.js",
     "xec": "node src/create-xec-wallets.js",
