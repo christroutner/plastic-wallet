@@ -108,7 +108,7 @@ function generateRando () {
 async function createPublic (pubDatas = []) {
   try {
     // create empty html file
-    touch(`${htmlDir}/paper-wallet-wif-public.html`)
+    touch(`${htmlDir}/paper-wallet-public.html`)
 
     for(let i=0; i<pubDatas.length; i++) {
       const pubData = pubDatas[i]
@@ -131,7 +131,7 @@ async function createPublic (pubDatas = []) {
     const htmlData = htmlTemplatePublic(htmlConfig)
 
     // save to html file
-    fs.writeFileSync(`${htmlDir}/paper-wallet-wif-public.html`, htmlData)
+    fs.writeFileSync(`${htmlDir}/paper-wallet-public.html`, htmlData)
   } catch (err) {
     console.error(`Error in createPublic()`)
     throw err

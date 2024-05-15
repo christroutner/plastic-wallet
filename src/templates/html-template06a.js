@@ -2,7 +2,8 @@
   This file encodes the html template for the golden ticket.
 */
 
-'use strict'
+// Border thickness is pixels.
+const BORDER_THICKNESS = 0
 
 const htmlTemplate = function (config = {}) {
   const { pubDatas } = config
@@ -32,7 +33,7 @@ const htmlTemplate = function (config = {}) {
           <tr>
             <td>
 
-              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
                 <table>
                   <tr>
                     <td style="">
@@ -43,7 +44,7 @@ const htmlTemplate = function (config = {}) {
                     </td>
 
                     <td style="">
-                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                      <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
                         <u>Public Addr</u><br />
                         ${pubDatas[0].pubAddr.slice(0, 12)}<br />
                         ${pubDatas[0].pubAddr.slice(12, 24)}<br />
@@ -57,7 +58,7 @@ const htmlTemplate = function (config = {}) {
                   </tr>
                 </table>
                 <p><center>
-                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                  <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
                   </b>
                 </center></p>
@@ -66,7 +67,7 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
                 <table>
                   <tr>
                     <td style="">
@@ -77,7 +78,7 @@ const htmlTemplate = function (config = {}) {
                     </td>
 
                     <td style="">
-                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                      <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
                         <u>Public Addr</u><br />
                         ${pubDatas[1].pubAddr.slice(0, 12)}<br />
                         ${pubDatas[1].pubAddr.slice(12, 24)}<br />
@@ -91,7 +92,7 @@ const htmlTemplate = function (config = {}) {
                   </tr>
                 </table>
                 <p><center>
-                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                  <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
                   </b>
                 </center></p>
@@ -100,7 +101,7 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
                 <table>
                   <tr>
                     <td style="">
@@ -111,7 +112,7 @@ const htmlTemplate = function (config = {}) {
                     </td>
 
                     <td style="">
-                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                      <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
                         <u>Public Addr</u><br />
                         ${pubDatas[2].pubAddr.slice(0, 12)}<br />
                         ${pubDatas[2].pubAddr.slice(12, 24)}<br />
@@ -125,7 +126,7 @@ const htmlTemplate = function (config = {}) {
                   </tr>
                 </table>
                 <p><center>
-                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                  <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
                   </b>
                 </center></p>
@@ -136,7 +137,7 @@ const htmlTemplate = function (config = {}) {
           <tr>
             <td>
 
-              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
                 <table>
                   <tr>
                     <td style="">
@@ -147,7 +148,7 @@ const htmlTemplate = function (config = {}) {
                     </td>
 
                     <td style="">
-                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                      <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
                         <u>Public Addr</u><br />
                         ${pubDatas[3].pubAddr.slice(0, 12)}<br />
                         ${pubDatas[3].pubAddr.slice(12, 24)}<br />
@@ -161,7 +162,7 @@ const htmlTemplate = function (config = {}) {
                   </tr>
                 </table>
                 <p><center>
-                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                  <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
                   </b>
                 </center></p>
@@ -170,7 +171,7 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
                 <table>
                   <tr>
                     <td style="">
@@ -181,7 +182,7 @@ const htmlTemplate = function (config = {}) {
                     </td>
 
                     <td style="">
-                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                      <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
                         <u>Public Addr</u><br />
                         ${pubDatas[4].pubAddr.slice(0, 12)}<br />
                         ${pubDatas[4].pubAddr.slice(12, 24)}<br />
@@ -195,7 +196,7 @@ const htmlTemplate = function (config = {}) {
                   </tr>
                 </table>
                 <p><center>
-                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                  <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
                   </b>
                 </center></p>
@@ -204,7 +205,7 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
                 <table>
                   <tr>
                     <td style="">
@@ -215,7 +216,7 @@ const htmlTemplate = function (config = {}) {
                     </td>
 
                     <td style="">
-                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                      <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
                         <u>Public Addr</u><br />
                         ${pubDatas[5].pubAddr.slice(0, 12)}<br />
                         ${pubDatas[5].pubAddr.slice(12, 24)}<br />
@@ -229,7 +230,7 @@ const htmlTemplate = function (config = {}) {
                   </tr>
                 </table>
                 <p><center>
-                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                  <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
                   </b>
                 </center></p>
@@ -240,7 +241,7 @@ const htmlTemplate = function (config = {}) {
           <tr>
             <td>
 
-              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
                 <table>
                   <tr>
                     <td style="">
@@ -251,7 +252,7 @@ const htmlTemplate = function (config = {}) {
                     </td>
 
                     <td style="">
-                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                      <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
                         <u>Public Addr</u><br />
                         ${pubDatas[6].pubAddr.slice(0, 12)}<br />
                         ${pubDatas[6].pubAddr.slice(12, 24)}<br />
@@ -265,7 +266,7 @@ const htmlTemplate = function (config = {}) {
                   </tr>
                 </table>
                 <p><center>
-                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                  <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
                   </b>
                 </center></p>
@@ -274,7 +275,7 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
                 <table>
                   <tr>
                     <td style="">
@@ -285,7 +286,7 @@ const htmlTemplate = function (config = {}) {
                     </td>
 
                     <td style="">
-                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                      <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
                         <u>Public Addr</u><br />
                         ${pubDatas[7].pubAddr.slice(0, 12)}<br />
                         ${pubDatas[7].pubAddr.slice(12, 24)}<br />
@@ -299,7 +300,7 @@ const htmlTemplate = function (config = {}) {
                   </tr>
                 </table>
                 <p><center>
-                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                  <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
                   </b>
                 </center></p>
@@ -308,7 +309,7 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: 1px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
                 <table>
                   <tr>
                     <td style="">
@@ -319,7 +320,7 @@ const htmlTemplate = function (config = {}) {
                     </td>
 
                     <td style="">
-                      <p style="font-family: Monaco, monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                      <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
                         <u>Public Addr</u><br />
                         ${pubDatas[8].pubAddr.slice(0, 12)}<br />
                         ${pubDatas[8].pubAddr.slice(12, 24)}<br />
@@ -333,7 +334,7 @@ const htmlTemplate = function (config = {}) {
                   </tr>
                 </table>
                 <p><center>
-                  <b style="font-family: Monaco, monospace; font-size: 26px;">
+                  <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
                   </b>
                 </center></p>
