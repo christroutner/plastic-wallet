@@ -28,12 +28,12 @@ const htmlTemplate = function (config = {}) {
   	<link rel="icon" href="./favicon.ico" type="image/x-icon">
     </head>
     <body style="padding: 0; margin: 0;">
-      <div style="border: 1px solid black; width: 1860px; height: 1240px;  padding: 5px; margin-left: 50px;">
+      <div style="border: 1px solid black; width: 1860px; height: 1240px;  padding: 5px;">
         <table>
           <tr>
             <td>
 
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 35px;">
                 <table>
                   <tr>
                     <td style="">
@@ -67,7 +67,7 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 60px;">
                 <table>
                   <tr>
                     <td style="">
@@ -101,7 +101,7 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 60px;">
                 <table>
                   <tr>
                     <td style="">
@@ -137,7 +137,7 @@ const htmlTemplate = function (config = {}) {
           <tr>
             <td>
 
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 35px;">
                 <table>
                   <tr>
                     <td style="">
@@ -171,7 +171,7 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 60px;">
                 <table>
                   <tr>
                     <td style="">
@@ -205,7 +205,7 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 60px;">
                 <table>
                   <tr>
                     <td style="">
@@ -241,7 +241,7 @@ const htmlTemplate = function (config = {}) {
           <tr>
             <td>
 
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 35px;">
                 <table>
                   <tr>
                     <td style="">
@@ -275,7 +275,7 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 60px;">
                 <table>
                   <tr>
                     <td style="">
@@ -309,7 +309,7 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 60px;">
                 <table>
                   <tr>
                     <td style="">
