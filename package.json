@@ -13,6 +13,7 @@
     "bch:bulk": "node src/create-bch-bulk-wallets.js",
     "slp": "node src/create-slp-wallets.js",
     "btc": "node src/create-btc-wallets.js",
+    "btc:bulk": "node src/create-btc-bulk-wallets.js",
     "xec": "node src/create-xec-wallets.js",
     "eth": "node src/create-eth-wallets.js",
     "lint": "standard --env mocha --fix"
