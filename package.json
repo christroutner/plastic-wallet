@@ -16,6 +16,7 @@
     "btc:bulk": "node src/create-btc-bulk-wallets.js",
     "xec": "node src/create-xec-wallets.js",
     "eth": "node src/create-eth-wallets.js",
+    "eth:bulk": "node src/create-eth-bulk-wallets.js",
     "lint": "standard --env mocha --fix"
   },
   "devDependencies": {

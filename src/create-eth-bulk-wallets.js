@@ -1,5 +1,5 @@
 /*
-  This script creates BCH paper wallets.
+  This script creates ETH paper wallets.
 
   Use the constants to customize the script for your use.
 */
@@ -12,13 +12,12 @@ const NUM_WALLETS = 9
 
 // <---- END
 
+// Global npm libraries
 const QRCode = require('qrcode')
 const touch = require('touch')
 const mkdirp = require('mkdirp')
 const fs = require('fs')
-
-const BCHJS = require('@psf/bch-js')
-const bchjs = new BCHJS()
+const { ethers } = require('ethers')
 
 const htmlDir = `${__dirname.toString()}/../output/html`
 const htmlTemplatePublic = require('./templates/html-template06a')
@@ -27,35 +26,7 @@ const htmlTemplatePrivate = require('./templates/html-template06b')
 async function start () {
   try {
     // create needed directory structure
-    mkdirp(`${htmlDir}`, err => { console.error('Error creating dir: ', err) })
-
-    const mnemonic = bchjs.Mnemonic.generate(
-      128,
-      bchjs.Mnemonic.wordLists().english
-    )
-
-    // root seed buffer
-    const rootSeed = await bchjs.Mnemonic.toSeed(mnemonic)
-
-    // master HDNode
-    const masterHDNode = bchjs.HDNode.fromSeed(rootSeed)
-
-    // HD wallet BIP44 standard derivation path of 145 used for BCH.
-    console.log("BIP44 Account: \"m/44'/0'/0'\"")
-
-    const wallets = []
-
-    // Generate the first 10 seed addresses.
-    for (let i = 0; i < NUM_WALLETS; i++) {
-      const childNode = masterHDNode.derivePath(`m/44'/0'/0'/0/${i}`)
-
-      const outObj = {}
-      outObj.cashAddress = bchjs.HDNode.toCashAddress(childNode)
-      outObj.WIF = bchjs.HDNode.toWIF(childNode)
-
-      wallets.push(outObj)
-    }
-    // console.log(`wallets: ${JSON.stringify(wallets, null, 2)}`)
+    mkdirp(`${htmlDir}`, err => { if (err) console.error('Error creating dir: ', err) })
 
     // Generate a random number for the first half of the serial number.
     const rnd = generateRando()
@@ -64,21 +35,29 @@ async function start () {
     const privDatas = []
 
     for (let i = 0; i < NUM_WALLETS; i++) {
+      const wallet = ethers.Wallet.createRandom()
+
       console.log(`\npaper wallet: ${i}`)
 
-      // get the priv key in wallet import format
-      const wif = wallets[i].WIF
-      console.log(`WIF for address ${i}: ${wif}`)
+      // get the priv key
+      const privKey = wallet.privateKey
+      console.log(`private key for address ${i}: ${privKey}`)
 
-      // Get the public key for the WIF.
-      const pubAddr = bchjs.Address.toLegacyAddress(wallets[i].cashAddress)
-      console.log(`pubAddr: ${pubAddr}`)
+      // Get the public address for the WIF.
+      const pubAddr = wallet.address
+      console.log(`pubAddr: ${wallet.address}`)
 
       const pubData = {pubAddr, rnd}
       pubDatas.push(pubData)
 
-      const privData = {wif, rnd}
+      const privData = {wif: privKey, rnd}
       privDatas.push(privData)
+
+      // Generate the artwork for the public address.
+      // await createPublic(pubAddr, i, rnd)
+
+      // Generate the artwork for the private key.
+      // await createPrivate(privKey, i, rnd)
     }
 
     // Generate the artwork for the public address.
@@ -171,3 +150,53 @@ async function createPrivate (privDatas = []) {
     throw err
   }
 }
+
+// async function createPublic (addr, i, rnd) {
+//   try {
+//     // create empty html file
+//     touch(`${htmlDir}/paper-wallet-wif-public-${i}.html`)
+//
+//     const qrOptions = {
+//       // width: 450,
+//       width: 525,
+//       margin: 0
+//     }
+//
+//     const pubQR = await QRCode.toDataURL(addr, qrOptions)
+//
+//     // Generate an HTML page from the dat.
+//     const htmlConfig = { pubAddr: addr, pubQR, i, rnd }
+//     const htmlData = htmlTemplatePublic(htmlConfig)
+//
+//     // save to html file
+//     fs.writeFileSync(`${htmlDir}/paper-wallet-wif-public-${i}.html`, htmlData)
+//   } catch (err) {
+//     console.error(`Error in createPublic()`)
+//     throw err
+//   }
+// }
+
+// async function createPrivate (wif, i, rnd) {
+//   try {
+//     // create empty html file
+//     touch(`${htmlDir}/paper-wallet-wif-private-${i}.html`)
+//
+//     const qrOptions = {
+//       // width: 450,
+//       width: 525,
+//       margin: 0
+//     }
+//
+//     const wifQR = await QRCode.toDataURL(wif, qrOptions)
+//
+//     // Generate an HTML page from the dat.
+//     const htmlConfig = { wifQR, wif, i, rnd }
+//     const htmlData = htmlTemplatePrivate(htmlConfig)
+//
+//     // save to html file
+//     fs.writeFileSync(`${htmlDir}/paper-wallet-wif-private-${i}.html`, htmlData)
+//   } catch (err) {
+//     console.error(`Error in createPrivate()`)
+//     throw err
+//   }
+// }
