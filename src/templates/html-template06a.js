@@ -1,5 +1,5 @@
 /*
-  This file encodes the html template for the golden ticket.
+  BCH & BTC bulk paper wallet template.
 */
 
 // Border thickness is pixels.

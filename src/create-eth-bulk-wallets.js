@@ -20,8 +20,8 @@ const fs = require('fs')
 const { ethers } = require('ethers')
 
 const htmlDir = `${__dirname.toString()}/../output/html`
-const htmlTemplatePublic = require('./templates/html-template06a')
-const htmlTemplatePrivate = require('./templates/html-template06b')
+const htmlTemplatePublic = require('./templates/html-template07a')
+const htmlTemplatePrivate = require('./templates/html-template07b')
 
 async function start () {
   try {

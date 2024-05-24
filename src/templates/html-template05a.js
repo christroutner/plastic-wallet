@@ -1,5 +1,5 @@
 /*
-  This file encodes the html template for the golden ticket.
+  ETH paper wallet template
 */
 
 'use strict'

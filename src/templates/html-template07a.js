@@ -1,15 +1,15 @@
 /*
-  BCH & BTC bulk paper wallet template.
+  ETH bulk paper wallet template.
 */
 
 // Border thickness is pixels.
 const BORDER_THICKNESS = 0
 
 const htmlTemplate = function (config = {}) {
-  const { privDatas } = config
+  const { pubDatas } = config
 
-  if (privDatas.length !== 9) {
-    throw new Error('privDatas must be an array with 9 elements.')
+  if (pubDatas.length !== 9) {
+    throw new Error('pubDatas must be an array with 9 elements.')
   }
 
   return `
@@ -28,7 +28,7 @@ const htmlTemplate = function (config = {}) {
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     </head>
     <body style="padding: 0; margin: 0;">
-      <div style="border: 1px solid black; width: 1860px; height: 1240px;  padding: 5px;">
+      <div style="border: 1px solid black; width: 1860px; height: 1240px; padding: 5px;">
         <table>
           <tr>
             <td>
@@ -37,7 +37,7 @@ const htmlTemplate = function (config = {}) {
                 <table>
                   <tr>
                     <td style="">
-                      <img src='${privDatas[0].privQR}' style="padding-left: 25px; padding-top: 25px;" />
+                      <img src='${pubDatas[0].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
                     </td>
 
                     <td style="width: 100px;">
@@ -45,13 +45,13 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
-                        ${privDatas[0].wif.slice(0, 12)}<br />
-                        ${privDatas[0].wif.slice(12, 24)}<br />
-                        ${privDatas[0].wif.slice(24, 36)}<br />
-                        ${privDatas[0].wif.slice(36, 48)}<br />
-                        ${privDatas[0].wif.slice(48, 52)}<br />
-                        SN# ${generateSN(privDatas[0].rnd, 0)}
+                        <u>Public Addr</u><br />
+                        ${pubDatas[0].pubAddr.slice(0, 13)}<br />
+                        ${pubDatas[0].pubAddr.slice(13, 26)}<br />
+                        ${pubDatas[0].pubAddr.slice(26, 39)}<br />
+                        ${pubDatas[0].pubAddr.slice(39, 52)}<br />
+                        ${pubDatas[0].pubAddr.slice(52, 65)}<br />
+                        SN# ${generateSN(pubDatas[0].rnd, 0)}
 
                       </p>
                     </td>
@@ -59,7 +59,7 @@ const htmlTemplate = function (config = {}) {
                 </table>
                 <p><center>
                   <b style="font-family: monospace; font-size: 26px;">
-                    Keep this PRIVATE. No pictures.
+                    Share this to recieve payment
                   </b>
                 </center></p>
               </div>
@@ -67,11 +67,11 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 60px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px;margin: 25px; margin-left: 60px;">
                 <table>
                   <tr>
                     <td style="">
-                      <img src='${privDatas[1].privQR}' style="padding-left: 25px; padding-top: 25px;" />
+                      <img src='${pubDatas[1].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
                     </td>
 
                     <td style="width: 100px;">
@@ -79,13 +79,13 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
-                        ${privDatas[1].wif.slice(0, 12)}<br />
-                        ${privDatas[1].wif.slice(12, 24)}<br />
-                        ${privDatas[1].wif.slice(24, 36)}<br />
-                        ${privDatas[1].wif.slice(36, 48)}<br />
-                        ${privDatas[1].wif.slice(48, 52)}<br />
-                        SN# ${generateSN(privDatas[1].rnd, 1)}
+                        <u>Public Addr</u><br />
+                        ${pubDatas[1].pubAddr.slice(0, 13)}<br />
+                        ${pubDatas[1].pubAddr.slice(13, 26)}<br />
+                        ${pubDatas[1].pubAddr.slice(26, 39)}<br />
+                        ${pubDatas[1].pubAddr.slice(39, 52)}<br />
+                        ${pubDatas[1].pubAddr.slice(52, 65)}<br />
+                        SN# ${generateSN(pubDatas[1].rnd, 1)}
 
                       </p>
                     </td>
@@ -93,7 +93,7 @@ const htmlTemplate = function (config = {}) {
                 </table>
                 <p><center>
                   <b style="font-family: monospace; font-size: 26px;">
-                    Keep this PRIVATE. No pictures.
+                    Share this to recieve payment
                   </b>
                 </center></p>
               </div>
@@ -101,11 +101,11 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 60px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px;margin: 25px; margin-left: 60px;">
                 <table>
                   <tr>
                     <td style="">
-                      <img src='${privDatas[2].privQR}' style="padding-left: 25px; padding-top: 25px;" />
+                      <img src='${pubDatas[2].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
                     </td>
 
                     <td style="width: 100px;">
@@ -113,13 +113,13 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
-                        ${privDatas[2].wif.slice(0, 12)}<br />
-                        ${privDatas[2].wif.slice(12, 24)}<br />
-                        ${privDatas[2].wif.slice(24, 36)}<br />
-                        ${privDatas[2].wif.slice(36, 48)}<br />
-                        ${privDatas[2].wif.slice(48, 52)}<br />
-                        SN# ${generateSN(privDatas[2].rnd, 2)}
+                        <u>Public Addr</u><br />
+                        ${pubDatas[2].pubAddr.slice(0, 13)}<br />
+                        ${pubDatas[2].pubAddr.slice(13, 26)}<br />
+                        ${pubDatas[2].pubAddr.slice(26, 39)}<br />
+                        ${pubDatas[2].pubAddr.slice(39, 52)}<br />
+                        ${pubDatas[2].pubAddr.slice(52, 65)}<br />
+                        SN# ${generateSN(pubDatas[2].rnd, 0)}
 
                       </p>
                     </td>
@@ -127,111 +127,7 @@ const htmlTemplate = function (config = {}) {
                 </table>
                 <p><center>
                   <b style="font-family: monospace; font-size: 26px;">
-                    Keep this PRIVATE. No pictures.
-                  </b>
-                </center></p>
-              </div>
-
-            </td>
-          </tr>
-          <tr>
-            <td>
-
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 35px;">
-                <table>
-                  <tr>
-                    <td style="">
-                      <img src='${privDatas[3].privQR}' style="padding-left: 25px; padding-top: 25px;" />
-                    </td>
-
-                    <td style="width: 100px;">
-                    </td>
-
-                    <td style="">
-                      <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
-                        ${privDatas[3].wif.slice(0, 12)}<br />
-                        ${privDatas[3].wif.slice(12, 24)}<br />
-                        ${privDatas[3].wif.slice(24, 36)}<br />
-                        ${privDatas[3].wif.slice(36, 48)}<br />
-                        ${privDatas[3].wif.slice(48, 52)}<br />
-                        SN# ${generateSN(privDatas[3].rnd, 3)}
-
-                      </p>
-                    </td>
-                  </tr>
-                </table>
-                <p><center>
-                  <b style="font-family: monospace; font-size: 26px;">
-                    Keep this PRIVATE. No pictures.
-                  </b>
-                </center></p>
-              </div>
-
-            </td>
-            <td>
-
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 60px;">
-                <table>
-                  <tr>
-                    <td style="">
-                      <img src='${privDatas[4].privQR}' style="padding-left: 25px; padding-top: 25px;" />
-                    </td>
-
-                    <td style="width: 100px;">
-                    </td>
-
-                    <td style="">
-                      <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
-                        ${privDatas[4].wif.slice(0, 12)}<br />
-                        ${privDatas[4].wif.slice(12, 24)}<br />
-                        ${privDatas[4].wif.slice(24, 36)}<br />
-                        ${privDatas[4].wif.slice(36, 48)}<br />
-                        ${privDatas[4].wif.slice(48, 52)}<br />
-                        SN# ${generateSN(privDatas[4].rnd, 4)}
-
-                      </p>
-                    </td>
-                  </tr>
-                </table>
-                <p><center>
-                  <b style="font-family: monospace; font-size: 26px;">
-                    Keep this PRIVATE. No pictures.
-                  </b>
-                </center></p>
-              </div>
-
-            </td>
-            <td>
-
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 60px;">
-                <table>
-                  <tr>
-                    <td style="">
-                      <img src='${privDatas[5].privQR}' style="padding-left: 25px; padding-top: 25px;" />
-                    </td>
-
-                    <td style="width: 100px;">
-                    </td>
-
-                    <td style="">
-                      <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
-                        ${privDatas[5].wif.slice(0, 12)}<br />
-                        ${privDatas[5].wif.slice(12, 24)}<br />
-                        ${privDatas[5].wif.slice(24, 36)}<br />
-                        ${privDatas[5].wif.slice(36, 48)}<br />
-                        ${privDatas[5].wif.slice(48, 52)}<br />
-                        SN# ${generateSN(privDatas[5].rnd, 5)}
-
-                      </p>
-                    </td>
-                  </tr>
-                </table>
-                <p><center>
-                  <b style="font-family: monospace; font-size: 26px;">
-                    Keep this PRIVATE. No pictures.
+                    Share this to recieve payment
                   </b>
                 </center></p>
               </div>
@@ -245,7 +141,7 @@ const htmlTemplate = function (config = {}) {
                 <table>
                   <tr>
                     <td style="">
-                      <img src='${privDatas[6].privQR}' style="padding-left: 25px; padding-top: 25px;" />
+                      <img src='${pubDatas[3].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
                     </td>
 
                     <td style="width: 100px;">
@@ -253,13 +149,13 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
-                        ${privDatas[6].wif.slice(0, 12)}<br />
-                        ${privDatas[6].wif.slice(12, 24)}<br />
-                        ${privDatas[6].wif.slice(24, 36)}<br />
-                        ${privDatas[6].wif.slice(36, 48)}<br />
-                        ${privDatas[6].wif.slice(48, 52)}<br />
-                        SN# ${generateSN(privDatas[6].rnd, 6)}
+                        <u>Public Addr</u><br />
+                        ${pubDatas[3].pubAddr.slice(0, 13)}<br />
+                        ${pubDatas[3].pubAddr.slice(13, 26)}<br />
+                        ${pubDatas[3].pubAddr.slice(26, 39)}<br />
+                        ${pubDatas[3].pubAddr.slice(39, 52)}<br />
+                        ${pubDatas[3].pubAddr.slice(52, 65)}<br />
+                        SN# ${generateSN(pubDatas[3].rnd, 3)}
 
                       </p>
                     </td>
@@ -267,7 +163,7 @@ const htmlTemplate = function (config = {}) {
                 </table>
                 <p><center>
                   <b style="font-family: monospace; font-size: 26px;">
-                    Keep this PRIVATE. No pictures.
+                    Share this to recieve payment
                   </b>
                 </center></p>
               </div>
@@ -275,11 +171,11 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 60px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px;margin: 25px; margin-left: 60px;">
                 <table>
                   <tr>
                     <td style="">
-                      <img src='${privDatas[7].privQR}' style="padding-left: 25px; padding-top: 25px;" />
+                      <img src='${pubDatas[4].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
                     </td>
 
                     <td style="width: 100px;">
@@ -287,13 +183,13 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
-                        ${privDatas[7].wif.slice(0, 12)}<br />
-                        ${privDatas[7].wif.slice(12, 24)}<br />
-                        ${privDatas[7].wif.slice(24, 36)}<br />
-                        ${privDatas[7].wif.slice(36, 48)}<br />
-                        ${privDatas[7].wif.slice(48, 52)}<br />
-                        SN# ${generateSN(privDatas[7].rnd, 7)}
+                        <u>Public Addr</u><br />
+                        ${pubDatas[4].pubAddr.slice(0, 13)}<br />
+                        ${pubDatas[4].pubAddr.slice(13, 26)}<br />
+                        ${pubDatas[4].pubAddr.slice(26, 39)}<br />
+                        ${pubDatas[4].pubAddr.slice(39, 52)}<br />
+                        ${pubDatas[4].pubAddr.slice(52, 65)}<br />
+                        SN# ${generateSN(pubDatas[4].rnd, 4)}
 
                       </p>
                     </td>
@@ -301,7 +197,7 @@ const htmlTemplate = function (config = {}) {
                 </table>
                 <p><center>
                   <b style="font-family: monospace; font-size: 26px;">
-                    Keep this PRIVATE. No pictures.
+                    Share this to recieve payment
                   </b>
                 </center></p>
               </div>
@@ -309,11 +205,11 @@ const htmlTemplate = function (config = {}) {
             </td>
             <td>
 
-              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 60px;">
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px;margin: 25px; margin-left: 60px;">
                 <table>
                   <tr>
                     <td style="">
-                      <img src='${privDatas[8].privQR}' style="padding-left: 25px; padding-top: 25px;" />
+                      <img src='${pubDatas[5].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
                     </td>
 
                     <td style="width: 100px;">
@@ -321,13 +217,13 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
-                        ${privDatas[8].wif.slice(0, 12)}<br />
-                        ${privDatas[8].wif.slice(12, 24)}<br />
-                        ${privDatas[8].wif.slice(24, 36)}<br />
-                        ${privDatas[8].wif.slice(36, 48)}<br />
-                        ${privDatas[8].wif.slice(48, 52)}<br />
-                        SN# ${generateSN(privDatas[8].rnd, 8)}
+                        <u>Public Addr</u><br />
+                        ${pubDatas[5].pubAddr.slice(0, 13)}<br />
+                        ${pubDatas[5].pubAddr.slice(13, 26)}<br />
+                        ${pubDatas[5].pubAddr.slice(26, 39)}<br />
+                        ${pubDatas[5].pubAddr.slice(39, 52)}<br />
+                        ${pubDatas[5].pubAddr.slice(52, 65)}<br />
+                        SN# ${generateSN(pubDatas[5].rnd, 5)}
 
                       </p>
                     </td>
@@ -335,7 +231,111 @@ const htmlTemplate = function (config = {}) {
                 </table>
                 <p><center>
                   <b style="font-family: monospace; font-size: 26px;">
-                    Keep this PRIVATE. No pictures.
+                    Share this to recieve payment
+                  </b>
+                </center></p>
+              </div>
+
+            </td>
+          </tr>
+          <tr>
+            <td>
+
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px; margin: 25px; margin-left: 35px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${pubDatas[6].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Public Addr</u><br />
+                        ${pubDatas[6].pubAddr.slice(0, 13)}<br />
+                        ${pubDatas[6].pubAddr.slice(13, 26)}<br />
+                        ${pubDatas[6].pubAddr.slice(26, 39)}<br />
+                        ${pubDatas[6].pubAddr.slice(39, 52)}<br />
+                        ${pubDatas[6].pubAddr.slice(52, 65)}<br />
+                        SN# ${generateSN(pubDatas[6].rnd, 6)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: monospace; font-size: 26px;">
+                    Share this to recieve payment
+                  </b>
+                </center></p>
+              </div>
+
+            </td>
+            <td>
+
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px;margin: 25px; margin-left: 60px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${pubDatas[7].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Public Addr</u><br />
+                        ${pubDatas[7].pubAddr.slice(0, 13)}<br />
+                        ${pubDatas[7].pubAddr.slice(13, 26)}<br />
+                        ${pubDatas[7].pubAddr.slice(26, 39)}<br />
+                        ${pubDatas[7].pubAddr.slice(39, 52)}<br />
+                        ${pubDatas[7].pubAddr.slice(52, 65)}<br />
+                        SN# ${generateSN(pubDatas[7].rnd, 7)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: monospace; font-size: 26px;">
+                    Share this to recieve payment
+                  </b>
+                </center></p>
+              </div>
+
+            </td>
+            <td>
+
+              <div style="border: ${BORDER_THICKNESS}px solid black; width: 533px; height: 335px;margin: 25px; margin-left: 60px;">
+                <table>
+                  <tr>
+                    <td style="">
+                      <img src='${pubDatas[8].pubQR}' style="padding-left: 25px; padding-top: 25px;" />
+                    </td>
+
+                    <td style="width: 100px;">
+                    </td>
+
+                    <td style="">
+                      <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
+                        <u>Public Addr</u><br />
+                        ${pubDatas[8].pubAddr.slice(0, 13)}<br />
+                        ${pubDatas[8].pubAddr.slice(13, 26)}<br />
+                        ${pubDatas[8].pubAddr.slice(26, 39)}<br />
+                        ${pubDatas[8].pubAddr.slice(39, 52)}<br />
+                        ${pubDatas[8].pubAddr.slice(52, 65)}<br />
+                        SN# ${generateSN(pubDatas[8].rnd, 8)}
+
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <p><center>
+                  <b style="font-family: monospace; font-size: 26px;">
+                    Share this to recieve payment
                   </b>
                 </center></p>
               </div>

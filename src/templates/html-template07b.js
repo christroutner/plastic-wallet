@@ -1,5 +1,5 @@
 /*
-  BCH & BTC bulk paper wallet template.
+  ETH bulk paper wallet template.
 */
 
 // Border thickness is pixels.
@@ -50,7 +50,8 @@ const htmlTemplate = function (config = {}) {
                         ${privDatas[0].wif.slice(12, 24)}<br />
                         ${privDatas[0].wif.slice(24, 36)}<br />
                         ${privDatas[0].wif.slice(36, 48)}<br />
-                        ${privDatas[0].wif.slice(48, 52)}<br />
+                        ${privDatas[0].wif.slice(48, 60)}<br />
+                        ${privDatas[0].wif.slice(60, 72)}<br />
                         SN# ${generateSN(privDatas[0].rnd, 0)}
 
                       </p>
@@ -84,7 +85,8 @@ const htmlTemplate = function (config = {}) {
                         ${privDatas[1].wif.slice(12, 24)}<br />
                         ${privDatas[1].wif.slice(24, 36)}<br />
                         ${privDatas[1].wif.slice(36, 48)}<br />
-                        ${privDatas[1].wif.slice(48, 52)}<br />
+                        ${privDatas[1].wif.slice(48, 60)}<br />
+                        ${privDatas[1].wif.slice(60, 72)}<br />
                         SN# ${generateSN(privDatas[1].rnd, 1)}
 
                       </p>
@@ -118,7 +120,8 @@ const htmlTemplate = function (config = {}) {
                         ${privDatas[2].wif.slice(12, 24)}<br />
                         ${privDatas[2].wif.slice(24, 36)}<br />
                         ${privDatas[2].wif.slice(36, 48)}<br />
-                        ${privDatas[2].wif.slice(48, 52)}<br />
+                        ${privDatas[2].wif.slice(48, 60)}<br />
+                        ${privDatas[2].wif.slice(60, 72)}<br />
                         SN# ${generateSN(privDatas[2].rnd, 2)}
 
                       </p>
@@ -154,7 +157,8 @@ const htmlTemplate = function (config = {}) {
                         ${privDatas[3].wif.slice(12, 24)}<br />
                         ${privDatas[3].wif.slice(24, 36)}<br />
                         ${privDatas[3].wif.slice(36, 48)}<br />
-                        ${privDatas[3].wif.slice(48, 52)}<br />
+                        ${privDatas[3].wif.slice(48, 60)}<br />
+                        ${privDatas[3].wif.slice(60, 72)}<br />
                         SN# ${generateSN(privDatas[3].rnd, 3)}
 
                       </p>
@@ -188,7 +192,8 @@ const htmlTemplate = function (config = {}) {
                         ${privDatas[4].wif.slice(12, 24)}<br />
                         ${privDatas[4].wif.slice(24, 36)}<br />
                         ${privDatas[4].wif.slice(36, 48)}<br />
-                        ${privDatas[4].wif.slice(48, 52)}<br />
+                        ${privDatas[4].wif.slice(48, 60)}<br />
+                        ${privDatas[4].wif.slice(60, 72)}<br />
                         SN# ${generateSN(privDatas[4].rnd, 4)}
 
                       </p>
@@ -222,7 +227,8 @@ const htmlTemplate = function (config = {}) {
                         ${privDatas[5].wif.slice(12, 24)}<br />
                         ${privDatas[5].wif.slice(24, 36)}<br />
                         ${privDatas[5].wif.slice(36, 48)}<br />
-                        ${privDatas[5].wif.slice(48, 52)}<br />
+                        ${privDatas[5].wif.slice(48, 60)}<br />
+                        ${privDatas[5].wif.slice(60, 72)}<br />
                         SN# ${generateSN(privDatas[5].rnd, 5)}
 
                       </p>
@@ -258,7 +264,8 @@ const htmlTemplate = function (config = {}) {
                         ${privDatas[6].wif.slice(12, 24)}<br />
                         ${privDatas[6].wif.slice(24, 36)}<br />
                         ${privDatas[6].wif.slice(36, 48)}<br />
-                        ${privDatas[6].wif.slice(48, 52)}<br />
+                        ${privDatas[6].wif.slice(48, 60)}<br />
+                        ${privDatas[6].wif.slice(60, 72)}<br />
                         SN# ${generateSN(privDatas[6].rnd, 6)}
 
                       </p>
@@ -292,7 +299,8 @@ const htmlTemplate = function (config = {}) {
                         ${privDatas[7].wif.slice(12, 24)}<br />
                         ${privDatas[7].wif.slice(24, 36)}<br />
                         ${privDatas[7].wif.slice(36, 48)}<br />
-                        ${privDatas[7].wif.slice(48, 52)}<br />
+                        ${privDatas[7].wif.slice(48, 60)}<br />
+                        ${privDatas[7].wif.slice(60, 72)}<br />
                         SN# ${generateSN(privDatas[7].rnd, 7)}
 
                       </p>
@@ -326,7 +334,8 @@ const htmlTemplate = function (config = {}) {
                         ${privDatas[8].wif.slice(12, 24)}<br />
                         ${privDatas[8].wif.slice(24, 36)}<br />
                         ${privDatas[8].wif.slice(36, 48)}<br />
-                        ${privDatas[8].wif.slice(48, 52)}<br />
+                        ${privDatas[8].wif.slice(48, 60)}<br />
+                        ${privDatas[8].wif.slice(60, 72)}<br />
                         SN# ${generateSN(privDatas[8].rnd, 8)}
 
                       </p>
