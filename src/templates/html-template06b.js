@@ -8,7 +8,7 @@ const BORDER_THICKNESS = 0
 const htmlTemplate = function (config = {}) {
   const { privDatas } = config
 
-  if(privDatas.length !== 9) {
+  if (privDatas.length !== 9) {
     throw new Error('privDatas must be an array with 9 elements.')
   }
 

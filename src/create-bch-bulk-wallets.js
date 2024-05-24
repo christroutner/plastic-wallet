@@ -74,7 +74,7 @@ async function start () {
       const pubAddr = wallets[i].cashAddress
       console.log(`pubAddr: ${pubAddr}`)
 
-      const pubData = {pubAddr,rnd}
+      const pubData = {pubAddr, rnd}
       pubDatas.push(pubData)
 
       const privData = {wif, rnd}
@@ -110,7 +110,7 @@ async function createPublic (pubDatas = []) {
     // create empty html file
     touch(`${htmlDir}/paper-wallet-public.html`)
 
-    for(let i=0; i<pubDatas.length; i++) {
+    for (let i = 0; i < pubDatas.length; i++) {
       const pubData = pubDatas[i]
 
       // Create the QR code artwork.
@@ -143,7 +143,7 @@ async function createPrivate (privDatas = []) {
     // create empty html file
     touch(`${htmlDir}/paper-wallet-wif-private.html`)
 
-    for(let i=0; i<privDatas.length; i++) {
+    for (let i = 0; i < privDatas.length; i++) {
       const privData = privDatas[i]
 
       // Create the QR code artwork.
