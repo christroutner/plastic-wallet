@@ -21,11 +21,11 @@ const htmlTemplate = function (config = {}) {
   <!-- Biz Card dimensions: 86mm (533px) x 54mm (335px) -->
   <html lang="en">
     <head>
-  	<meta charset="UTF-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-  	<link rel="stylesheet" href="./style.css">
-  	<link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
     </head>
     <body style="padding: 0; margin: 0;">
       <div style="border: 1px solid black; width: 1860px; height: 1240px;  padding: 5px;">
@@ -344,7 +344,7 @@ const htmlTemplate = function (config = {}) {
           </tr>
         </table>
       </div>
-  	  <script src="index.js"></script>
+      <script src="index.js"></script>
     </body>
   </html>
   `
