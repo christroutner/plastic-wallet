@@ -45,7 +45,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Public Addr</u><br />
+                        Public Addr<br />
                         ${pubDatas[0].pubAddr.slice(0, 13)}<br />
                         ${pubDatas[0].pubAddr.slice(13, 26)}<br />
                         ${pubDatas[0].pubAddr.slice(26, 39)}<br />
@@ -79,7 +79,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Public Addr</u><br />
+                        Public Addr<br />
                         ${pubDatas[1].pubAddr.slice(0, 13)}<br />
                         ${pubDatas[1].pubAddr.slice(13, 26)}<br />
                         ${pubDatas[1].pubAddr.slice(26, 39)}<br />
@@ -113,7 +113,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Public Addr</u><br />
+                        Public Addr<br />
                         ${pubDatas[2].pubAddr.slice(0, 13)}<br />
                         ${pubDatas[2].pubAddr.slice(13, 26)}<br />
                         ${pubDatas[2].pubAddr.slice(26, 39)}<br />
@@ -149,7 +149,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Public Addr</u><br />
+                        Public Addr<br />
                         ${pubDatas[3].pubAddr.slice(0, 13)}<br />
                         ${pubDatas[3].pubAddr.slice(13, 26)}<br />
                         ${pubDatas[3].pubAddr.slice(26, 39)}<br />
@@ -183,7 +183,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Public Addr</u><br />
+                        Public Addr<br />
                         ${pubDatas[4].pubAddr.slice(0, 13)}<br />
                         ${pubDatas[4].pubAddr.slice(13, 26)}<br />
                         ${pubDatas[4].pubAddr.slice(26, 39)}<br />
@@ -217,7 +217,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Public Addr</u><br />
+                        Public Addr<br />
                         ${pubDatas[5].pubAddr.slice(0, 13)}<br />
                         ${pubDatas[5].pubAddr.slice(13, 26)}<br />
                         ${pubDatas[5].pubAddr.slice(26, 39)}<br />
@@ -253,7 +253,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Public Addr</u><br />
+                        Public Addr<br />
                         ${pubDatas[6].pubAddr.slice(0, 13)}<br />
                         ${pubDatas[6].pubAddr.slice(13, 26)}<br />
                         ${pubDatas[6].pubAddr.slice(26, 39)}<br />
@@ -287,7 +287,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Public Addr</u><br />
+                        Public Addr<br />
                         ${pubDatas[7].pubAddr.slice(0, 13)}<br />
                         ${pubDatas[7].pubAddr.slice(13, 26)}<br />
                         ${pubDatas[7].pubAddr.slice(26, 39)}<br />
@@ -321,7 +321,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Public Addr</u><br />
+                        Public Addr<br />
                         ${pubDatas[8].pubAddr.slice(0, 13)}<br />
                         ${pubDatas[8].pubAddr.slice(13, 26)}<br />
                         ${pubDatas[8].pubAddr.slice(26, 39)}<br />

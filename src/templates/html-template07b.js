@@ -45,7 +45,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
+                        Private Key<br />
                         ${privDatas[0].wif.slice(0, 12)}<br />
                         ${privDatas[0].wif.slice(12, 24)}<br />
                         ${privDatas[0].wif.slice(24, 36)}<br />
@@ -80,7 +80,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
+                        Private Key<br />
                         ${privDatas[1].wif.slice(0, 12)}<br />
                         ${privDatas[1].wif.slice(12, 24)}<br />
                         ${privDatas[1].wif.slice(24, 36)}<br />
@@ -115,7 +115,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
+                        Private Key<br />
                         ${privDatas[2].wif.slice(0, 12)}<br />
                         ${privDatas[2].wif.slice(12, 24)}<br />
                         ${privDatas[2].wif.slice(24, 36)}<br />
@@ -152,7 +152,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
+                        Private Key<br />
                         ${privDatas[3].wif.slice(0, 12)}<br />
                         ${privDatas[3].wif.slice(12, 24)}<br />
                         ${privDatas[3].wif.slice(24, 36)}<br />
@@ -187,7 +187,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
+                        Private Key<br />
                         ${privDatas[4].wif.slice(0, 12)}<br />
                         ${privDatas[4].wif.slice(12, 24)}<br />
                         ${privDatas[4].wif.slice(24, 36)}<br />
@@ -222,7 +222,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
+                        Private Key<br />
                         ${privDatas[5].wif.slice(0, 12)}<br />
                         ${privDatas[5].wif.slice(12, 24)}<br />
                         ${privDatas[5].wif.slice(24, 36)}<br />
@@ -259,7 +259,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
+                        Private Key<br />
                         ${privDatas[6].wif.slice(0, 12)}<br />
                         ${privDatas[6].wif.slice(12, 24)}<br />
                         ${privDatas[6].wif.slice(24, 36)}<br />
@@ -294,7 +294,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
+                        Private Key<br />
                         ${privDatas[7].wif.slice(0, 12)}<br />
                         ${privDatas[7].wif.slice(12, 24)}<br />
                         ${privDatas[7].wif.slice(24, 36)}<br />
@@ -329,7 +329,7 @@ const htmlTemplate = function (config = {}) {
 
                     <td style="">
                       <p style="font-family: monospace; font-size: 26px; margin: 5px; padding-top: 25px; padding-right: 25px;">
-                        <u>Private Key</u><br />
+                        Private Key<br />
                         ${privDatas[8].wif.slice(0, 12)}<br />
                         ${privDatas[8].wif.slice(12, 24)}<br />
                         ${privDatas[8].wif.slice(24, 36)}<br />
