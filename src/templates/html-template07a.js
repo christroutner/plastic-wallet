@@ -119,7 +119,7 @@ const htmlTemplate = function (config = {}) {
                         ${pubDatas[2].pubAddr.slice(26, 39)}<br />
                         ${pubDatas[2].pubAddr.slice(39, 52)}<br />
                         ${pubDatas[2].pubAddr.slice(52, 65)}<br />
-                        SN# ${generateSN(pubDatas[2].rnd, 0)}
+                        SN# ${generateSN(pubDatas[2].rnd, 2)}
 
                       </p>
                     </td>
