@@ -3,7 +3,7 @@
 */
 
 // Border thickness is pixels.
-const BORDER_THICKNESS = 1
+const BORDER_THICKNESS = 0
 
 const htmlTemplate = function (config = {}) {
   const { pubDatas } = config
