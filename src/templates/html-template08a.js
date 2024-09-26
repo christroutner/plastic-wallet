@@ -57,10 +57,11 @@ const htmlTemplate = function (config = {}) {
                     </td>
                   </tr>
                 </table>
-                <p><center>
+                <p style="margin-top: -20px;"><center>
                   <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
-                  </b>
+                  </b><br />
+                  OpenSourceMetalWallet.com
                 </center></p>
               </div>
 
@@ -91,10 +92,11 @@ const htmlTemplate = function (config = {}) {
                     </td>
                   </tr>
                 </table>
-                <p><center>
+                <p style="margin-top: -20px;"><center>
                   <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
-                  </b>
+                  </b><br />
+                  OpenSourceMetalWallet.com
                 </center></p>
               </div>
 
@@ -125,10 +127,11 @@ const htmlTemplate = function (config = {}) {
                     </td>
                   </tr>
                 </table>
-                <p><center>
+                <p style="margin-top: -20px;"><center>
                   <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
-                  </b>
+                  </b><br />
+                  OpenSourceMetalWallet.com
                 </center></p>
               </div>
 
@@ -161,10 +164,11 @@ const htmlTemplate = function (config = {}) {
                     </td>
                   </tr>
                 </table>
-                <p><center>
+                <p style="margin-top: -20px;"><center>
                   <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
-                  </b>
+                  </b><br />
+                  OpenSourceMetalWallet.com
                 </center></p>
               </div>
 
@@ -195,10 +199,11 @@ const htmlTemplate = function (config = {}) {
                     </td>
                   </tr>
                 </table>
-                <p><center>
+                <p style="margin-top: -20px;"><center>
                   <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
-                  </b>
+                  </b><br />
+                  OpenSourceMetalWallet.com
                 </center></p>
               </div>
 
@@ -229,10 +234,11 @@ const htmlTemplate = function (config = {}) {
                     </td>
                   </tr>
                 </table>
-                <p><center>
+                <p style="margin-top: -20px;"><center>
                   <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
-                  </b>
+                  </b><br />
+                  OpenSourceMetalWallet.com
                 </center></p>
               </div>
 
@@ -265,10 +271,11 @@ const htmlTemplate = function (config = {}) {
                     </td>
                   </tr>
                 </table>
-                <p><center>
+                <p style="margin-top: -20px;"><center>
                   <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
-                  </b>
+                  </b><br />
+                  OpenSourceMetalWallet.com
                 </center></p>
               </div>
 
@@ -299,10 +306,11 @@ const htmlTemplate = function (config = {}) {
                     </td>
                   </tr>
                 </table>
-                <p><center>
+                <p style="margin-top: -20px;"><center>
                   <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
-                  </b>
+                  </b><br />
+                  OpenSourceMetalWallet.com
                 </center></p>
               </div>
 
@@ -333,10 +341,11 @@ const htmlTemplate = function (config = {}) {
                     </td>
                   </tr>
                 </table>
-                <p><center>
+                <p style="margin-top: -20px;"><center>
                   <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
-                  </b>
+                  </b><br />
+                  OpenSourceMetalWallet.com
                 </center></p>
               </div>
 
@@ -370,10 +379,11 @@ const htmlTemplate = function (config = {}) {
                     </td>
                   </tr>
                 </table>
-                <p><center>
+                <p style="margin-top: -20px;"><center>
                   <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
-                  </b>
+                  </b><br />
+                  OpenSourceMetalWallet.com
                 </center></p>
               </div>
 
@@ -404,10 +414,11 @@ const htmlTemplate = function (config = {}) {
                     </td>
                   </tr>
                 </table>
-                <p><center>
+                <p style="margin-top: -20px;"><center>
                   <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
-                  </b>
+                  </b><br />
+                  OpenSourceMetalWallet.com
                 </center></p>
               </div>
 
@@ -438,10 +449,11 @@ const htmlTemplate = function (config = {}) {
                     </td>
                   </tr>
                 </table>
-                <p><center>
+                <p style="margin-top: -20px;"><center>
                   <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
-                  </b>
+                  </b><br />
+                  OpenSourceMetalWallet.com
                 </center></p>
               </div>
 
@@ -475,10 +487,11 @@ const htmlTemplate = function (config = {}) {
                     </td>
                   </tr>
                 </table>
-                <p><center>
+                <p style="margin-top: -20px;"><center>
                   <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
-                  </b>
+                  </b><br />
+                  OpenSourceMetalWallet.com
                 </center></p>
               </div>
 
@@ -509,10 +522,11 @@ const htmlTemplate = function (config = {}) {
                     </td>
                   </tr>
                 </table>
-                <p><center>
+                <p style="margin-top: -20px;"><center>
                   <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
-                  </b>
+                  </b><br />
+                  OpenSourceMetalWallet.com
                 </center></p>
               </div>
 
@@ -543,10 +557,11 @@ const htmlTemplate = function (config = {}) {
                     </td>
                   </tr>
                 </table>
-                <p><center>
+                <p style="margin-top: -20px;"><center>
                   <b style="font-family: monospace; font-size: 26px;">
                     Share this to recieve payment
-                  </b>
+                  </b><br />
+                  OpenSourceMetalWallet.com
                 </center></p>
               </div>
 
