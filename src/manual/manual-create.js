@@ -14,8 +14,8 @@ const QRCode = require('qrcode')
 const touch = require('touch')
 const mkdirp = require('mkdirp')
 const fs = require('fs')
-const emoji = require('node-emoji')
-const chalk = require('chalk')
+// const emoji = require('node-emoji')
+// const chalk = require('chalk')
 
 const htmlTemplatePublic = require('./html-template04a')
 const htmlTemplatePrivate = require('./html-template04b')
@@ -39,8 +39,8 @@ const main = async () => {
   // Generate the artwork for the private key.
   await createPrivate(PRIVATE_ADDR, i, rnd)
 
-  console.log(chalk.green('All done.'), emoji.get(':white_check_mark:'))
-  console.log(emoji.get(':rocket:'), `html files written successfully.`)
+  console.log('All done.')
+  console.log(`html files written successfully.`)
 }
 main()
 
