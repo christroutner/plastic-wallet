@@ -17,6 +17,7 @@
     "xec": "node src/create-xec-wallets.js",
     "eth": "node src/create-eth-wallets.js",
     "eth:bulk": "node src/create-eth-bulk-wallets.js",
+    "bizcards": "node src/create-biz-card-15.js",
     "lint": "standard --env mocha --fix"
   },
   "devDependencies": {
